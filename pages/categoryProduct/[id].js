@@ -9,7 +9,8 @@ import Head from 'next/head'
 const Product = () => {
     const [productList, setProductList] = useState([])
     const [mainProductList, setMainProductList] = useState([])
-    const [deparmentName, setDeparmentName] = useState([])
+    const [departmentName, setDepartmentName] = useState([])
+    const [brandsName, setBrandsName] = useState([])
     const [inputPrice, setInputPrice] = useState({ min: 0, max: 0 })
     const { query } = useRouter()
 
@@ -23,18 +24,32 @@ const Product = () => {
         setProductList(product)
         setMainProductList(product)
 
-        if (deparmentName.length) {
-            // --- Filter product my deperment name
-            const filterProducts = mainProductList.filter(({ title }) => {
+
+        if (brandsName.length) {
+            console.log(brandsName)
+            const filterProducts = productList.filter(({ brands }) => {
                 return (
-                    deparmentName.some((deperment) => title === deperment)
+                    brandsName.some((brand) => brands === brand)
                 )
             })
             setProductList(filterProducts)
         }
 
 
-    }, [query, deparmentName])
+        if (departmentName.length) {
+            console.log(departmentName)
+            // --- Filter product my Department name
+            const filterProducts = productList.filter(({ title }) => {
+                return (
+                    departmentName.some((department) => title === department)
+                )
+            })
+            setProductList(filterProducts)
+        }
+
+
+
+    }, [query, departmentName, brandsName])
 
 
     let uniqueCategory = '';
@@ -42,7 +57,7 @@ const Product = () => {
     let uniqueBrands = []
     let uniqueColors = []
     if (mainProductList.length) {
-        // --- 
+        // --- Find Category
         mainProductList?.filter(element => {
             const isDuplicate = mainProductList?.includes(element.subCategory);
             if (!isDuplicate) {
@@ -52,7 +67,7 @@ const Product = () => {
             return false;
         });
 
-        // --- Find all unique Deperment, Breands, Colors from product list for filtring product
+        // --- Find all unique Department, Breands, Colors from product list for filtring product
         mainProductList.forEach((element) => {
 
             if (!uniqueTitle.includes(element.title)) {
@@ -68,16 +83,22 @@ const Product = () => {
         });
     }
 
-    // ---- Filtering products by Deperment
+    // ---- Filtering products by Department
     const handleDeparmentFilter = (titles) => {
-        if (deparmentName.includes(titles)) {
-            setDeparmentName(deparmentName.filter((val) => val !== titles));
+        if (departmentName.includes(titles)) {
+            setDepartmentName(departmentName.filter((val) => val !== titles));
         } else {
-            setDeparmentName([...deparmentName, titles]);
+            setDepartmentName([...departmentName, titles]);
         }
-
     }
 
+    const handleBrandFilter = (brand) => {
+        if (brandsName.includes(brand)) {
+            setBrandsName(brandsName.filter((val) => val !== brand));
+        } else {
+            setBrandsName([...brandsName, brand]);
+        }
+    }
 
 
     // --- Filtering product by rating star
@@ -87,8 +108,8 @@ const Product = () => {
     }
 
 
+    // --- Filtering product by Price
     const handlePriceInput = (event) => {
-
         setInputPrice({ ...inputPrice, [event.target.name]: Number(event.target.value), [event.target.name]: Number(event.target.value) })
     }
     const handlePriceSubmit = () => {
@@ -110,13 +131,13 @@ const Product = () => {
                     {/* ----- Deperment */}
                     <div className='mt-3'>
                         <b className='text-black/90 '>{uniqueCategory}</b>
-                        <ul>
+                        <ul className='flex flex-col'>
                             {
                                 uniqueTitle.map((title, id) => {
                                     return (
 
-                                        <label className='block' key={id} onChange={() => handleDeparmentFilter(title)} htmlFor={id}>
-                                            <input type="checkbox" id={id} />
+                                        <label className='inline-block' key={id} onChange={() => handleDeparmentFilter(title)} htmlFor={`deperment${id}`}>
+                                            <input type="checkbox" id={`deperment${id}`} />
                                             {title}
                                         </label>
 
@@ -139,13 +160,13 @@ const Product = () => {
                     {/* ----- Brands */}
                     <div className='mt-3'>
                         <b className='text-black/90 '>Brands</b>
-                        <ul>
+                        <ul className='flex flex-col'>
                             {
                                 uniqueBrands.map((brand, id) => {
                                     return (
 
-                                        <label className='block' key={id} htmlFor={id}>
-                                            <input type="checkbox" id={id} />
+                                        <label className='inline-block' key={id} onChange={() => handleBrandFilter(brand)} htmlFor={`brands${id}`}>
+                                            <input type="checkbox" id={`brands${id}`} />
                                             {brand}
                                         </label>
 
@@ -198,13 +219,13 @@ const Product = () => {
                     {/* ---- Colors */}
                     <div className='mt-3'>
                         <b className='text-black/90 '>Colors</b>
-                        <ul>
+                        <ul className='flex flex-col'>
                             {
                                 uniqueColors.map((brand, id) => {
                                     return (
 
-                                        <label className='block' key={id} htmlFor={id}>
-                                            <input type="checkbox" id={id} />
+                                        <label className='inline-block' key={id} htmlFor={`colors${id}`}>
+                                            <input type="checkbox" id={`colors${id}`} />
                                             {brand}
                                         </label>
 

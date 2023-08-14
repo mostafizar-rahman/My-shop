@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { dicrementProduct, incrementProduct, removeToCart } from "@/redux/features/addCart/cartSlice";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const Cart = ({ cart, setCart }) => {
   const cartItems = useSelector((state) => state.addCart.cart)
@@ -27,7 +28,7 @@ const Cart = ({ cart, setCart }) => {
         />
       </div>
 
-      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div >
         <div class="mx-auto max-w-3xl">
           <div class="text-center">
             <h1 class="text-xl font-bold text-white sm:text-3xl">My Product</h1>
@@ -38,33 +39,38 @@ const Cart = ({ cart, setCart }) => {
               {
                 cartItems.map(({ id, quantity, image, price, title }) => {
                   return (
-                    <li key={id} class="flex items-center gap-4">
-                      <Image
-                        src={image}
-                        width={64}
-                        height={64}
-                        alt=""
-                        class="h-16 w-16 rounded object-contain"
-                      />
-                      <div>
-                        <h3 class="text-sm text-white">{title}</h3>
-                        <small className="text-slate-100/70 ">
-                          Price: {price}
-                        </small>
+                    <li key={id} class="flex justify-between gap-4">
+                      <div className="flex gap-3">
+                        <Image
+                          src={image}
+                          width={64}
+                          height={64}
+                          alt=""
+                          class="h-20 w-20 rounded object-contain bg-white p-1"
+                        />
+                        <div>
+                          <h3 class="text-sm text-white">{title}</h3>
+                          <small className="text-slate-100/70 ">
+                            Price: {price}
+                          </small>
+                          <br />
+                          <small className="text-slate-100/70 ">
+                            Color: {"red"}
+                          </small>
+                          <br />
+                          <small className="text-slate-100/70 ">
+                            Sixe: {"red"}
+                          </small>
+                        </div>
                       </div>
 
-                      <div className="flex flex-1 items-center justify-end gap-2">
+                      <div className="flex items-center gap-3 h-8">
                         <div>
-                          <label htmlFor="Quantity" className="sr-only">
-                            {" "}
-                            Quantity{" "}
-                          </label>
-
-                          <div className="flex items-center rounded border border-gray-200">
+                          <div className="flex items-center rounded border border-gray-200 h-8">
                             <button
                               onClick={() => dispatch(dicrementProduct(id))}
                               type="button"
-                              className="h-10 w-10 leading-10 text-gray-200 transition hover:opacity-75"
+                              className="h-8 w-8  text-black/70 bg-white transition hover:opacity-75 rounded-l"
                             >
                               -
                             </button>
@@ -75,14 +81,14 @@ const Cart = ({ cart, setCart }) => {
                                 id="Quantity"
                                 value={quantity}
                                 readOnly
-                                className="h-10 w-16 border-y-0 bg-transparent text-white border-gray-200 text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
+                                className="h-10 w-16 border-y-0 bg-transparent text-white border-gray-200 text-center "
                               />
                             </span>
 
                             <button
                               onClick={() => dispatch(incrementProduct(id))}
                               type="button"
-                              className="h-10 w-10 leading-10 text-gray-200 transition hover:opacity-75"
+                              className="h-8 w-8  text-black/70 bg-white transition hover:opacity-75 rounded-r"
                             >
                               +
                             </button>
@@ -90,25 +96,9 @@ const Cart = ({ cart, setCart }) => {
                         </div>
 
                         <button
-                          className="text-gray-600 transition hover:text-red-600"
                           onClick={() => dispatch(removeToCart(id))}
                         >
-                          <span className="sr-only">Remove item</span>
-
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="h-4 w-4"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
-                            />
-                          </svg>
+                          <AiOutlineDelete className="text-white/90 text-xl hover:text-red-600" />
                         </button>
                       </div>
                     </li>

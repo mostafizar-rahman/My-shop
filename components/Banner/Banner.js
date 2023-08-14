@@ -6,15 +6,16 @@ import Home4 from "../../assets/images/home4.png";
 import Home5 from "../../assets/images/home5.jpg";
 import Home6 from "../../assets/images/home6.jpg";
 import { AiFillCalendar } from "react-icons/ai";
+import { motion } from "framer-motion";
 import { FiRefreshCcw } from "react-icons/fi";
 import { FaTelegramPlane } from "react-icons/fa";
+import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
+
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import { motion } from "framer-motion";
 
 const Banner = () => {
   const cardVariants = {

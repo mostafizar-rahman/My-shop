@@ -55,7 +55,7 @@ const HorizontalCard = ({ id, image, title, price, rating }) => {
         </div>
       </div>
       <div className="absolute left-0 invisible group-hover:visible  top-0 bg-white bg-opacity-70 w-0 h-full group-hover:w-full rounded-md flex justify-center items-center space-x-4 transition-all">
-        <AiOutlineShoppingCart onClick={() => (dispatch(addToCart({ id, name, image, price })), toast.success("Add To Cart Success"))} className="text-2xl cursor-pointer hover:text-orange-500" />
+        <AiOutlineShoppingCart onClick={() => (dispatch(addToCart({ id, title, image, price })), toast.success("Add To Cart Success"))} className="text-2xl cursor-pointer hover:text-orange-500" />
         <Link href={`productDetails/${id}`}>
           <AiOutlineEye className="text-2xl cursor-pointer hover:text-orange-500" />
         </Link>

@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
+import Head from 'next/head'
+import { motion } from "framer-motion"
 import Banner from '@/components/Banner/Banner'
 import { categoryListData } from '@/utlits/categoryListData'
 import CategorieCard from '@/components/CategorieCard/CategorieCard'
@@ -6,15 +9,13 @@ import { productsData } from '@/utlits/productsData'
 import HorizontalCard from '@/components/Card/HorizontalCard/HorizontalCard'
 import MainCard from '@/components/Card/MainCard/MainCard'
 import AdsBanner from '@/components/AdsBanner/AdsBanner'
+import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
+
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import Image from 'next/image'
-import { motion } from "framer-motion"
-import Head from 'next/head'
+
 
 
 const Home = ({ data }) => {
@@ -30,9 +31,10 @@ const Home = ({ data }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [])
 
+  // -- Responsive swipper js
   let perView = 5
   if (screenSize <= 1100) {
-    perView = 4
+    perView = 5
   }
   if (screenSize <= 1000) {
     perView = 3
@@ -42,6 +44,20 @@ const Home = ({ data }) => {
   }
   if (screenSize <= 500) {
     perView = 1
+  }
+
+  let perView2 = 7
+  if (screenSize <= 1100) {
+    perView2 = 6
+  }
+  if (screenSize <= 1000) {
+    perView2 = 5
+  }
+  if (screenSize <= 767) {
+    perView2 = 3
+  }
+  if (screenSize <= 500) {
+    perView2 = 2
   }
 
 
@@ -188,13 +204,11 @@ const Home = ({ data }) => {
       {/* ------ Brands */}
       <div className=' brands mx-auto max-w-7xl px-3 mt-28 mb-10'>
         <Swiper
-          modules={[Navigation, Autoplay,]}
-          spaceBetween={20}
-          slidesPerView={7}
-          autoplay={{
-            delay: 3000
-          }}
-          loop={true}
+           modules={[Navigation, Autoplay]}
+           spaceBetween={0}
+           slidesPerView={perView2}
+           autoplay={{ delay: 1000 }}
+           loop={true}
         >
           <SwiperSlide>
             <div>
@@ -214,6 +228,66 @@ const Home = ({ data }) => {
           <SwiperSlide>
             <div>
               <Image src={require("../assets/brands/5.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
