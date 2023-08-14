@@ -26,7 +26,7 @@ const MainCard = ({ id, title, price, image, description, quantity }) => {
     }
   };
   return (
-    <motion.div
+    <div
       variants={cardVariants}
       className="relative  overflow-hidden bg-white p-4 group "
     >
@@ -40,8 +40,10 @@ const MainCard = ({ id, title, price, image, description, quantity }) => {
         <Image alt="image" src={image} width={200} height={100} className="h-[200px] object-contain mx-auto" />
       </div>
       <div className="mt-3">
-        <h4 className="text-lg font-medium">{title}</h4>
-        <div className="flex items-center justify-between">
+        <h4 className="text-base font-medium">
+          {title.length > 40 ? title.slice(0, 40) + '...' : title}
+        </h4>
+        <div className="flex items-center justify-between mt-2">
           <p className=" font-bold text-xl"> <span className="text-sm font-normal">$</span>{price}</p>
           <div>
             <StarRating star={3} />
@@ -56,7 +58,7 @@ const MainCard = ({ id, title, price, image, description, quantity }) => {
           <AiOutlineEye className="text-2xl mt-2 text-white cursor-pointer" />
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

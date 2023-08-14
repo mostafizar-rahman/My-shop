@@ -32,9 +32,9 @@ const Home = ({ data }) => {
   }, [])
 
   // -- Responsive swipper js
-  let perView = 5
+  let perView = 4
   if (screenSize <= 1100) {
-    perView = 5
+    perView = 4
   }
   if (screenSize <= 1000) {
     perView = 3
@@ -71,7 +71,7 @@ const Home = ({ data }) => {
       {/* ----- Banner */}
       <Banner />
       {/* ------ Featured Products */}
-      <motion.div
+      <div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -114,9 +114,9 @@ const Home = ({ data }) => {
           </Swiper>
 
         </div>
-      </motion.div>
+      </div>
       {/* ------ Category  */}
-      <motion.div
+      <div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -127,9 +127,9 @@ const Home = ({ data }) => {
             categoryListData.slice(0, 3).map(({ id, category, subCategory }) => <CategorieCard id={id} category={category} subCategory={subCategory} />)
           }
         </div>
-      </motion.div>
+      </div>
       {/* ------ Featured Products */}
-      <motion.div
+      <div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -172,9 +172,9 @@ const Home = ({ data }) => {
           </Swiper>
 
         </div>
-      </motion.div>
+      </div>
       {/* ------ Products */}
-      <motion.div
+      <div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -186,11 +186,11 @@ const Home = ({ data }) => {
             data.slice(0, 10).map(({ id, title, image, price, quantity }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
           }
         </div>
-      </motion.div>
+      </div>
       {/* ----- Ads Banner */}
       <AdsBanner />
       {/* ------ Products */}
-      <motion.div
+      <div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -200,7 +200,7 @@ const Home = ({ data }) => {
             data.slice(0, 5).map(({ id, title, image, price, quantity }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
           }
         </div>
-      </motion.div>
+      </div>
       {/* ------ Brands */}
       <div className=' brands mx-auto max-w-7xl px-3 mt-28 mb-10'>
         <Swiper

@@ -29,27 +29,27 @@ const Cart = ({ cart, setCart }) => {
       </div>
 
       <div >
-        <div class="mx-auto max-w-3xl">
-          <div class="text-center">
-            <h1 class="text-xl font-bold text-white sm:text-3xl">My Product</h1>
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
+            <h1 className="text-xl font-bold text-white sm:text-3xl">My Product</h1>
           </div>
 
-          <div class="mt-8">
-            <ul class="space-y-4">
+          <div className="mt-8">
+            <ul className="space-y-4">
               {
                 cartItems.map(({ id, quantity, image, price, title }) => {
                   return (
-                    <li key={id} class="flex justify-between gap-4">
+                    <li key={id} className="flex justify-between gap-4">
                       <div className="flex gap-3">
                         <Image
                           src={image}
                           width={64}
                           height={64}
                           alt=""
-                          class="h-20 w-20 rounded object-contain bg-white p-1"
+                          className="h-20 w-20 rounded object-contain bg-white p-1"
                         />
                         <div>
-                          <h3 class="text-sm text-white">{title}</h3>
+                          <h3 className="text-sm text-white">{title}</h3>
                           <small className="text-slate-100/70 ">
                             Price: {price}
                           </small>
@@ -59,7 +59,7 @@ const Cart = ({ cart, setCart }) => {
                           </small>
                           <br />
                           <small className="text-slate-100/70 ">
-                            Sixe: {"red"}
+                            Size: {"M"}
                           </small>
                         </div>
                       </div>
@@ -108,19 +108,19 @@ const Cart = ({ cart, setCart }) => {
 
             </ul>
 
-            <div class="mt-8 flex justify-end border-t border-gray-100 pt-8">
-              <div class="w-screen max-w-lg space-y-4">
-                <dl class="space-y-0.5 text-sm text-white">
-                  <div class="flex justify-between !text-base font-medium">
+            <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
+              <div className="w-screen max-w-lg space-y-4">
+                <dl className="space-y-0.5 text-sm text-white">
+                  <div className="flex justify-between !text-base font-medium">
                     <dt>Total</dt>
                     <dd>${totalPrice}</dd>
                   </div>
                 </dl>
 
-                <div class="flex justify-end">
+                <div className="flex justify-end">
                   <Link
-                    href="/checkout"
-                    class="block rounded bg-orange-500 px-5 py-3 text-sm text-gray-100 transition hover:bg-orange-600"
+                    href="/login"
+                    className="block rounded bg-orange-500 px-5 py-3 text-sm text-gray-100 transition hover:bg-orange-600"
                   >
                     Checkout
                   </Link>

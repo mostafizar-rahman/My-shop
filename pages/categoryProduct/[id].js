@@ -27,7 +27,7 @@ const Product = () => {
 
         if (brandsName.length) {
             console.log(brandsName)
-            const filterProducts = productList.filter(({ brands }) => {
+            const filterProducts = mainProductList.filter(({ brands }) => {
                 return (
                     brandsName.some((brand) => brands === brand)
                 )
@@ -37,11 +37,10 @@ const Product = () => {
 
 
         if (departmentName.length) {
-            console.log(departmentName)
             // --- Filter product my Department name
-            const filterProducts = productList.filter(({ title }) => {
+            const filterProducts = mainProductList.filter(({ department }) => {
                 return (
-                    departmentName.some((department) => title === department)
+                    departmentName.some((val) => department === val)
                 )
             })
             setProductList(filterProducts)
@@ -53,7 +52,7 @@ const Product = () => {
 
 
     let uniqueCategory = '';
-    let uniqueTitle = []
+    let uniqueDepartment = []
     let uniqueBrands = []
     let uniqueColors = []
     if (mainProductList.length) {
@@ -70,8 +69,8 @@ const Product = () => {
         // --- Find all unique Department, Breands, Colors from product list for filtring product
         mainProductList.forEach((element) => {
 
-            if (!uniqueTitle.includes(element.title)) {
-                uniqueTitle.push(element.title);
+            if (!uniqueDepartment.includes(element.department)) {
+                uniqueDepartment.push(element.department);
 
             }
             if (!uniqueBrands.includes(element.brands)) {
@@ -84,14 +83,14 @@ const Product = () => {
     }
 
     // ---- Filtering products by Department
-    const handleDeparmentFilter = (titles) => {
-        if (departmentName.includes(titles)) {
-            setDepartmentName(departmentName.filter((val) => val !== titles));
+    const handleDeparmentFilter = (department) => {
+        if (departmentName.includes(department)) {
+            setDepartmentName(departmentName.filter((val) => val !== department));
         } else {
-            setDepartmentName([...departmentName, titles]);
+            setDepartmentName([...departmentName, department]);
         }
     }
-
+console.log(departmentName)
     const handleBrandFilter = (brand) => {
         if (brandsName.includes(brand)) {
             setBrandsName(brandsName.filter((val) => val !== brand));
@@ -133,12 +132,11 @@ const Product = () => {
                         <b className='text-black/90 '>{uniqueCategory}</b>
                         <ul className='flex flex-col'>
                             {
-                                uniqueTitle.map((title, id) => {
+                                uniqueDepartment.map((department, id) => {
                                     return (
-
-                                        <label className='inline-block' key={id} onChange={() => handleDeparmentFilter(title)} htmlFor={`deperment${id}`}>
+                                        <label className='inline-block' key={id} onChange={() => handleDeparmentFilter(department)} htmlFor={`deperment${id}`}>
                                             <input type="checkbox" id={`deperment${id}`} />
-                                            {title}
+                                            {department}
                                         </label>
 
                                     )

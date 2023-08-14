@@ -34,14 +34,14 @@ const Banner = () => {
   };
  
   return (
-    <motion.section
+    <section
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
       className=" grid lg:grid-cols-[auto_50%_20%] md:grid-cols-[auto_70%] grid-cols-1 md:gap-x-5 gap-x-0 "
     >
       {/* --------- Left Side */}
-      <motion.div
+      <div
         variants={cardVariants}
         className="lg:row-span-2 hidden md:block lg:h-[700px] h-[600px] relative">
         <Image
@@ -56,7 +56,7 @@ const Banner = () => {
             Hooded
           </h3>
         </div>
-      </motion.div>
+      </div>
       {/* --------- Center */}
       <div>
 
@@ -142,7 +142,7 @@ const Banner = () => {
         </Swiper>
       </div>
       {/* -------- Right Side */}
-      <motion.div
+      <div
         variants={cardVariants}
         className="hidden lg:block"
       >
@@ -174,7 +174,7 @@ const Banner = () => {
             </h3>
           </div>
         </div>
-      </motion.div>
+      </div>
       {/* ------- our offer */}
       <div className="grid md:grid-cols-3 sm:grid-cols-2 col-span-2 px-3 lg:px-0  lg:gap-0 gap-5">
         <div className="flex justify-center sm:justify-start sm:flex-row flex-col text-center sm:text-left items-center space-x-5 bg-slate-100 h-[100px] mb-3 rounded-md lg:rounded-none px-3 ">
@@ -201,7 +201,7 @@ const Banner = () => {
       </div>
 
 
-    </motion.section>
+    </section>
   );
 };
 

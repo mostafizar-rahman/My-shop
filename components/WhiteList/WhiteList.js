@@ -36,14 +36,14 @@ const WhiteList = ({ whiteList, setWhiteList }) => {
         />
       </div>
 
-      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        <div class="mx-auto max-w-3xl">
-          <div class="text-center">
-            <h1 class="text-xl font-bold text-white sm:text-3xl">My Product</h1>
+      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
+            <h1 className="text-xl font-bold text-white sm:text-3xl">My Product</h1>
           </div>
 
-          <div class="mt-8">
-            <ul class="space-y-4">
+          <div className="mt-8">
+            <ul className="space-y-4">
               {
                 whiteListProducts.map(({ id, image, price, title }) => {
                   return (
