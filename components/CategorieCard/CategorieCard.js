@@ -1,9 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion"
+
 const CategorieCard = ({ subCategory, category }) => {
+  const cardVariants = {
+    offscreen: {
+      y: 300
+    },
+    onscreen: {
+      y: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+
+      }
+    }
+  };
+
+
   return (
-    <div className=" rounded-md bg-white p-5">
+    <motion.div variants={cardVariants} className=" rounded-md bg-white p-5">
       <h3 className="font-semibold text-xl">{category}</h3>
       <div className="grid md:grid-cols-3 grid-cols-2 gap-5 mt-3 ">
         {subCategory.map(({ id, name, image }) => {
@@ -25,10 +43,8 @@ const CategorieCard = ({ subCategory, category }) => {
           );
         })}
       </div>
-      <Link href="" className="text-blue-700 mt-5 inline-block">
-        See More
-      </Link>
-    </div>
+
+    </motion.div>
   );
 };
 

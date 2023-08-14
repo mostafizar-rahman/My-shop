@@ -3,154 +3,228 @@ import Banner from '@/components/Banner/Banner'
 import { categoryListData } from '@/utlits/categoryListData'
 import CategorieCard from '@/components/CategorieCard/CategorieCard'
 import { productsData } from '@/utlits/productsData'
-import VerticalCard from '@/components/Card/VerticalCard/VerticalCard'
 import HorizontalCard from '@/components/Card/HorizontalCard/HorizontalCard'
-import { featuredData } from '@/utlits/featuredData'
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import MainCard from '@/components/Card/MainCard/MainCard'
 import AdsBanner from '@/components/AdsBanner/AdsBanner'
-import { useDispatch } from 'react-redux'
+import { Navigation, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+import Image from 'next/image'
+import { motion } from "framer-motion"
+import Head from 'next/head'
+
 
 const Home = ({ data }) => {
-  const [isActiveSlider, setIsActiveSlider] = useState(0);
-  const [isTrendingActiveSlider, setIsTrendingActiveSlider] = useState(0)
+  const [screenSize, setScreenSize] = useState(1100)
 
-
-  const handleNextItem = () => {
-    if (isActiveSlider <= 0) {
-      setIsActiveSlider(2);
-    } else {
-      setIsActiveSlider(isActiveSlider - 1);
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize(window.innerWidth);
     }
 
-  };
-  const handlePreviwesItem = () => {
-    if (isActiveSlider >= 2) {
-      setIsActiveSlider(0);
-    } else {
-      setIsActiveSlider(isActiveSlider + 1);
-    }
+    window.addEventListener('resize', handleResize);
 
-  };
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
 
-  const handleTrendingNextItem = () => {
-    if (isTrendingActiveSlider <= 0) {
-      setIsTrendingActiveSlider(2)
-    } else {
-      setIsTrendingActiveSlider(isTrendingActiveSlider - 1)
-    }
-
+  let perView = 5
+  if (screenSize <= 1100) {
+    perView = 4
   }
-  const handleTrendingPreviwesItem = () => {
-    if (isTrendingActiveSlider >= 2) {
-      setIsTrendingActiveSlider(0)
-    } else {
-      setIsTrendingActiveSlider(isTrendingActiveSlider + 1)
-    }
+  if (screenSize <= 1000) {
+    perView = 3
   }
+  if (screenSize <= 767) {
+    perView = 2
+  }
+  if (screenSize <= 500) {
+    perView = 1
+  }
+
+
+
   return (
     <section>
+      <Head>
+        <title>MySHOP.com</title>
+        <link rel="icon" href="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_640.png" />
+      </Head>
+      {/* ----- Banner */}
       <Banner />
       {/* ------ Featured Products */}
-      <div className='mx-auto max-w-7xl px-3 mt-28'>
-        <div className='grid lg:grid-cols-[20%_auto_20%] md:grid-cols-[30%_auto] gap-8'>
-          <div className='w-full min-h-[500px] sm:min-h-[400px] md:min-h-[600px] relative'>
-            <div className='flex w-full h-full relative overflow-x-hidden mt-10'>
-              <div className={`w-full flex flex-wrap justify-between gap-3 md:gap-0 md:block absolute transition-all ${isActiveSlider === 0 ? 'left-0' : '-left-full'}`}>
-                {featuredData.slice(0, 4).map(({ id, image, name, price, rating }) => <HorizontalCard key={id} image={image} name={name} price={price} rating={rating} />)}
-              </div>
-              <div className={`w-full flex flex-wrap justify-between gap-3 md:gap-0 md:block absolute transition-all ${isActiveSlider === 1 ? 'left-0' : '-left-full'}`}>
-                {featuredData.slice(4, 8).map(({ id, image, name, price, rating }) => <HorizontalCard key={id} image={image} name={name} price={price} rating={rating} />)}
-              </div>
-            </div>
-            <div className="absolute top-0 flex justify-between w-full">
-              <h4 className='text-orange-500 font-semibold text-xl'>Best selles</h4>
-              <div className='flex gap-4'>
-                <button className='bg-white w-7 h-7 rounded-full flex justify-center items-center' onClick={() => handleNextItem('bestSelles')}>
-                  <AiOutlineLeft />
-                </button>
-                <button className='bg-white w-7 h-7 rounded-full flex justify-center items-center' onClick={() => handlePreviwesItem('bestSelles')}>
-                  <AiOutlineRight />
-                </button>
-              </div>
-            </div>
-          </div>
-          {/* Trend */}
-          <div className=' w-full h-[600px] relative'>
-            <div className={`relative h-[600px] mt-0 overflow-y-hidden overflow-x-hidden`}>
-              <div className={`flex flex-wrap justify-between w-full mt-10 absolute  ${isTrendingActiveSlider === 0 ? 'top-0' : '-top-full'} `}>
-                {featuredData.slice(0, 6).map(({ id, image, name, price, rating }) => <VerticalCard key={id} name={name} price={price} image={image} rating={rating} />)}
-              </div>
-              <div className={`flex flex-wrap justify-between w-full mt-10 absolute  ${isTrendingActiveSlider === 1 ? 'top-0' : '-top-full'} `}>
-                {featuredData.slice(6, 12).map(({ id, image, name, price, rating }) => <VerticalCard key={id} name={name} price={price} image={image} rating={rating} />)}
-              </div>
-            </div>
-            <div className="absolute top-0 flex justify-between w-full">
-              <h4 className='text-orange-500 font-semibold text-xl'>Trending</h4>
-              <div className='flex gap-4'>
-                <button className='bg-white w-7 h-7 rounded-full flex justify-center items-center' onClick={handleTrendingNextItem}>
-                  <AiOutlineLeft />
-                </button>
-                <button className='bg-white w-7 h-7 rounded-full flex justify-center items-center' onClick={handleTrendingPreviwesItem}>
-                  <AiOutlineRight />
-                </button>
-              </div>
-            </div>
-          </div>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className='mx-auto max-w-7xl px-3 mt-10  '
+      >
+        <div className="group/best">
+          <h3 className='text-2xl font-bold  mb-3 border-b-[2px] inline-block border-b-orange-500'>Top Selles</h3>
+          <Swiper
 
-          {/* Hot Deal */}
-          <div className='w-full min-h-[500px] sm:min-h-[400px] md:min-h-[600px] relative'>
-            <div className='flex w-full h-full relative overflow-x-hidden mt-10'>
-              <div className={`w-full flex flex-wrap justify-between gap-3 md:gap-0 md:block absolute transition-all ${isActiveSlider === 0 ? 'left-0' : '-left-full'}`}>
-                {featuredData.slice(0, 4).map(({ id, image, name, price, rating }) => <HorizontalCard key={id} image={image} name={name} price={price} rating={rating} />)}
+            modules={[Navigation, Autoplay,]}
+            spaceBetween={20}
+            slidesPerView={perView}
+            navigation={
+              {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }
+            }
+            loop={true}
+          >
+            {
+              productsData.map(({ id, image, title, price, rating }) => {
+                return (
+                  <SwiperSlide>
+                    <HorizontalCard key={id} id={id} image={image} title={title} price={price} rating={rating} />
+                  </SwiperSlide>
+                )
+              })
+            }
+
+            <div className='invisible group-hover/best:visible'>
+              <div className="swiper-button-next">
+                <BiRightArrow className="text-white " />
               </div>
-              <div className={`w-full flex flex-wrap justify-between gap-3 md:gap-0 md:block absolute transition-all ${isActiveSlider === 1 ? 'left-0' : '-left-full'}`}>
-                {featuredData.slice(4, 8).map(({ id, image, name, price, rating }) => <HorizontalCard key={id} image={image} name={name} price={price} rating={rating} />)}
+              <div className="swiper-button-prev">
+                <BiLeftArrow className="text-white " />
               </div>
             </div>
-            <div className="absolute top-0 flex justify-between w-full">
-              <h4 className='text-orange-500 font-semibold text-xl'>Hot Deals</h4>
-              <div className='flex gap-4'>
-                <button className='bg-white w-7 h-7 rounded-full flex justify-center items-center' onClick={() => handleNextItem('hotDeals')}>
-                  <AiOutlineLeft />
-                </button>
-                <button className='bg-white w-7 h-7 rounded-full flex justify-center items-center' onClick={() => handlePreviwesItem('hotDeals')}>
-                  <AiOutlineRight />
-                </button>
-              </div>
-            </div>
-          </div>
+
+          </Swiper>
 
         </div>
-      </div>
+      </motion.div>
       {/* ------ Category  */}
-      <div className='mx-auto max-w-7xl px-3 mt-28'>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className='mx-auto max-w-7xl px-3 mt-14'
+      >
         <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
-            categoryListData.map(({ id, category, subCategory }) => <CategorieCard id={id} category={category} subCategory={subCategory} />)
+            categoryListData.slice(0, 3).map(({ id, category, subCategory }) => <CategorieCard id={id} category={category} subCategory={subCategory} />)
           }
         </div>
-      </div>
+      </motion.div>
+      {/* ------ Featured Products */}
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className='mx-auto max-w-7xl px-3 mt-14'
+      >
+        <div className="group/best">
+          <h3 className='text-2xl font-bold mb-3 border-b-[2px] inline-block border-b-orange-500'>Popular products</h3>
+          <Swiper
+
+            modules={[Navigation, Autoplay,]}
+            spaceBetween={20}
+            slidesPerView={perView}
+            navigation={
+              {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }
+            }
+            loop={true}
+          >
+            {
+              productsData.map(({ id, image, title, price, rating }) => {
+                return (
+                  <SwiperSlide>
+                    <HorizontalCard key={id} id={id} image={image} title={title} price={price} rating={rating} />
+                  </SwiperSlide>
+                )
+              })
+            }
+
+            <div className='invisible group-hover/best:visible'>
+              <div className="swiper-button-next">
+                <BiRightArrow className="text-white " />
+              </div>
+              <div className="swiper-button-prev">
+                <BiLeftArrow className="text-white " />
+              </div>
+            </div>
+
+          </Swiper>
+
+        </div>
+      </motion.div>
       {/* ------ Products */}
-      <div className='mx-auto max-w-7xl px-3 mt-28'>
-        <h3 className='text-3xl font-bold text-white mb-4'>For You</h3>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className='mx-auto max-w-7xl px-3 mt-20'
+      >
+        <h3 className='text-2xl font-bold mb-3 border-b-[2px] inline-block border-b-orange-500'>For You</h3>
         <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
             data.slice(0, 10).map(({ id, title, image, price, quantity }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
           }
         </div>
-      </div>
+      </motion.div>
       {/* ----- Ads Banner */}
       <AdsBanner />
       {/* ------ Products */}
-      <div className='mx-auto max-w-7xl px-3 mt-10'>
-        <h3 className='text-3xl font-bold text-white mb-4'>For You</h3>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        className='mx-auto max-w-7xl px-3 mt-10'>
         <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
             data.slice(0, 5).map(({ id, title, image, price, quantity }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
           }
         </div>
+      </motion.div>
+      {/* ------ Brands */}
+      <div className=' brands mx-auto max-w-7xl px-3 mt-28 mb-10'>
+        <Swiper
+          modules={[Navigation, Autoplay,]}
+          spaceBetween={20}
+          slidesPerView={7}
+          autoplay={{
+            delay: 3000
+          }}
+          loop={true}
+        >
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/2.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/3.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/4.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/5.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>
+              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+            </div>
+          </SwiperSlide>
+
+        </Swiper>
       </div>
+
     </section>
   )
 }

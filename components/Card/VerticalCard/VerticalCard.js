@@ -9,7 +9,7 @@ import {
 
 const VerticalCard = ({ image, name, price, rating }) => {
   return (
-    <div className="  bg-white rounded-md py-1 px-2 relative group mb-5 lg:basis-[31%] basis-1/2">
+    <div className="  bg-white rounded-md py-1 px-2 relative group  lg:basis-[31%] basis-1/2">
       <div className="bg-orange-500 rounded-md">
         <Image
           alt="image"

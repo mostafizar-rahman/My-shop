@@ -17,8 +17,8 @@ const Cart = ({ cart, setCart }) => {
 
   return (
     <aside
-      className={`fixed top-0  ${cart ? "right-0" : "-right-full"
-        } duration-700 max-w-md w-full h-full bg-[#13263d] px-5 py-[60px] border-l border-[#516782] z-50`}
+      className={`fixed top-0 bottom-0 overflow-y-auto ${cart ? "right-0" : "-right-full"
+        } duration-700 max-w-md w-full h-full bg-[#13263d] px-5 py-[60px] border-l border-[#516782] z-50 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']`}
     >
       <div>
         <FaTimes
@@ -30,7 +30,7 @@ const Cart = ({ cart, setCart }) => {
       <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div class="mx-auto max-w-3xl">
           <div class="text-center">
-            <h1 class="text-xl font-bold text-white sm:text-3xl">My Cart</h1>
+            <h1 class="text-xl font-bold text-white sm:text-3xl">My Product</h1>
           </div>
 
           <div class="mt-8">

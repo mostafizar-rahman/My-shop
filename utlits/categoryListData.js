@@ -101,4 +101,109 @@ export const categoryListData = [
       },
     ],
   },
+  {
+    id:4,
+    category: "Baby",
+    subCategory: [
+      {
+        id: 1,
+        name: "Baby Care",
+        image: img20,
+      },
+      {
+        id: 2,
+        name: "Gifts",
+        image: img20,
+      },
+      {
+        id: 3,
+        name: "Feeding",
+        image: img20,
+      },
+    ]
+  },
+  {
+    id:5,
+    category: "Beauty and personal care",
+    subCategory: [
+      {
+        id: 1,
+        name: "Makeup",
+        image: img20,
+      },
+      {
+        id: 2,
+        name: "Skin Care",
+        image: img20,
+      },
+      {
+        id: 3,
+        name: "Hair Care",
+        image: img20,
+      },
+    ]
+  },
+  {
+    id:6,
+    category: "Health and Household",
+    subCategory: [
+      {
+        id: 1,
+        name: "Oral Care",
+        image: img20,
+      },
+      {
+        id: 2,
+        name: "Personal Care",
+        image: img20,
+      },
+      {
+        id: 3,
+        name: "Sports Nuraition",
+        image: img20,
+      },
+    ]
+  },
+  {
+    id:7,
+    category: "Toyes and Games",
+    subCategory: [
+      {
+        id: 1,
+        name: "Bath",
+        image: img20,
+      },
+      {
+        id: 2,
+        name: "Bath",
+        image: img20,
+      },
+      {
+        id: 3,
+        name: "Bath",
+        image: img20,
+      },
+    ]
+  },
+  {
+    id:8,
+    category: "Industaial and Scientific",
+    subCategory: [
+      {
+        id: 1,
+        name: "Bath",
+        image: img20,
+      },
+      {
+        id: 2,
+        name: "Bath",
+        image: img20,
+      },
+      {
+        id: 3,
+        name: "Bath",
+        image: img20,
+      },
+    ]
+  },
 ];

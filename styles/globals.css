@@ -14,9 +14,20 @@ body {
   background-color: #c8cacc;
 }
 
-/* .swiper-button-prev {
-  width: 40px;
-  height: 40px;
+.swiper-button-next::after, .swiper-button-prev::after {
+ display: none;
+}
+.swiper-button-next, .swiper-button-prev{
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 50%;
-  background-color: red;
-} */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-next svg, .swiper-button-prev svg{
+  width: 20px !important;
+}
+
+.brands .swiper-wrapper{
+  align-items: center;
+}

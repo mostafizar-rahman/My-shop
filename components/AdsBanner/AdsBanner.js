@@ -3,7 +3,7 @@ import React from "react";
 const AdsBanner = () => {
     return (
         <>
-            <div className="py-6 bg-indigo-500 mt-10">
+            <div className="py-6  mt-10" style={{background: `linear-gradient(135deg, #46DD82, #63C52E)`}}>
                 <div className="lg:max-w-[1280px] md:max-w-[696px] max-w-[343px] mx-auto ">
                     <div className="lg:flex md:flex block justify-between items-center">
                         <div className="md:p-0 p-4">

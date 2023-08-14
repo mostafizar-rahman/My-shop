@@ -19,8 +19,11 @@ export const productsData = [
     category: "Men's Fashion",
     subCategory: "Clothing",
     title: "Pant",
-    price: 40,
-    quantity:10
+    price: 30,
+    quantity: 10,
+    color: "Black",
+    brands: "Bluedrim",
+    rating: 2
   },
   {
     id: 3,
@@ -28,8 +31,11 @@ export const productsData = [
     category: "Men's Fashion",
     subCategory: "Clothing",
     title: "Shart",
-    price: 40,
-    quantity:10
+    price: 1000,
+    quantity: 10,
+    color: "White",
+    brands: "Oppo",
+    rating: 5
   },
   {
     id: 2,
@@ -38,7 +44,10 @@ export const productsData = [
     subCategory: "Shoes",
     title: "Sendle",
     price: 40,
-    quantity:10
+    quantity: 10,
+    color: "Black",
+    brands: "Vivo",
+    rating: 2
   },
   {
     id: 222,
@@ -46,8 +55,11 @@ export const productsData = [
     category: "Men's Fashion",
     subCategory: "Shoes",
     title: "Juta",
-    price: 40,
-    quantity:10
+    price: 50,
+    quantity: 10,
+    color: "Red",
+    brands: "Sumsing",
+    rating: 3
   },
   {
     id: 22,
@@ -55,8 +67,11 @@ export const productsData = [
     category: "Men's Fashion",
     subCategory: "Shoes",
     title: "Choppal",
-    price: 40,
-    quantity:10
+    price: 20,
+    quantity: 10,
+    color: "Green",
+    brands: "Sumsing",
+    rating: 4
   },
   {
     id: 223,
@@ -65,7 +80,10 @@ export const productsData = [
     subCategory: "Shoes",
     title: "Choppal",
     price: 40,
-    quantity:10
+    quantity: 10,
+    color: "White",
+    brands: "Sumsing",
+    rating: 5
   },
   {
     id: 4,
@@ -73,8 +91,11 @@ export const productsData = [
     category: "Men's Fashion",
     subCategory: "Shoes",
     title: "Sendle",
-    price: 40,
-    quantity:10
+    price: 80,
+    quantity: 10,
+    color: "Black",
+    brands: "Sumsing",
+    rating: 3
   },
   {
     id: 5,
@@ -82,8 +103,11 @@ export const productsData = [
     category: "Men's Fashion",
     subCategory: "Shoes",
     title: "Sendle",
-    price: 40,
-    quantity:10
+    price: 5000,
+    quantity: 10,
+    color: "Golden",
+    brands: "Sumsing",
+    rating: 4
   },
   {
     id: 6,
@@ -91,23 +115,32 @@ export const productsData = [
     subCategory: "Computer",
     title: "Threepci",
     price: 40,
-    quantity:10
+    quantity: 10,
+    color: "Golden",
+    brands: "Vivo",
+    rating: 4
   },
   {
     id: 7,
     image: img20,
     subCategory: "Laptop",
     title: "Solaor",
-    price: 40,
-    quantity:10
+    price: 90,
+    quantity: 10,
+    color: "Red",
+    brands: "Oppo",
+    rating: 5
   },
   {
     id: 8,
     image: img21,
     subCategory: "Monitors",
     title: "Sendle",
-    price: 40,
-    quantity:10
+    price: 60,
+    quantity: 10,
+    color: "Skiy",
+    brands: "Samsung",
+    rating: 5
   },
 
   {
@@ -115,24 +148,33 @@ export const productsData = [
     image: img22,
     subCategory: "Bath",
     title: "Threepci",
-    price: 40,
-    quantity:10
+    price: 350,
+    quantity: 10,
+    color: "Blue",
+    brands: "Oppp",
+    rating: 5
   },
   {
     id: 10,
     image: img23,
     subCategory: "Furniture",
     title: "Solaor",
-    price: 40,
-    quantity:10
+    price: 20,
+    quantity: 10,
+    color: "Blue",
+    brands: "Apple",
+    rating: 5
   },
   {
     id: 11,
     image: img24,
     subCategory: "Furniture",
     title: "Sendle",
-    price: 40,
-    quantity:10
+    price: 220,
+    quantity: 10,
+    color: "Red",
+    brands: "Apple",
+    rating: 5
   }
 
 

@@ -55,7 +55,7 @@ const CategoryList = () => {
                                         subCategory.map(({ id, name }) => {
                                             return (
                                                 <li key={id} className='px-3 py-2 mb-1 hover:bg-white hover:text-black'>
-                                                    <Link href={`${category}-${name}`} className='w-full block'>{name}</Link>
+                                                    <Link href={`/categoryProduct/${category}-${name}`} className='w-full block'>{name}</Link>
                                                 </li>
                                             )
                                         })
