@@ -35,10 +35,7 @@ const Banner = () => {
  
   return (
     <section
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}
-      className=" grid lg:grid-cols-[auto_50%_20%] md:grid-cols-[auto_70%] grid-cols-1 md:gap-x-5 gap-x-0 "
+      className="max-w-[1900px] mx-auto grid lg:grid-cols-[auto_50%_20%] md:grid-cols-[auto_70%] grid-cols-1 md:gap-x-5 gap-x-0 "
     >
       {/* --------- Left Side */}
       <div
@@ -154,7 +151,7 @@ const Banner = () => {
             height={300}
             className="w-full h-[300px] object-cover"
           />
-          <div className="max-w-sm absolute bottom-0 left-0 z-10 bg-black bg-opacity-30 w-full h-full p-3 flex items-end">
+          <div className="max-w-sm absolute bottom-0  left-0 z-10 bg-black bg-opacity-30 w-full h-full p-3 flex items-end">
             <h3 className="lg:text-3xl text-xl font-semibold text-slate-100 font-norican">
               Hooded
             </h3>

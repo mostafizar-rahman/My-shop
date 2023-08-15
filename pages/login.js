@@ -6,27 +6,27 @@ import Link from 'next/link'
 const Login = () => {
   const [loading, setLoading] = useState(false)
   return (
-    <section className='mx-auto max-w-3xl bg-white' >
-      <div className='flex items-center justify-center px-1'>
-        <div className='min-h-[600px] w-[800px] md:flex items-center  hidden' style={{ background: `linear-gradient(135deg, #46DD82, #63C52E)` }}>
+    <section className='mx-auto max-w-5xl bg-white mt-12 mb-10' >
+      <div className='flex items-center justify-center p-1'>
+        <div className='min-h-[600px] w-full md:flex items-center justify-center hidden' style={{ background: `linear-gradient(135deg, #46DD82, #63C52E)` }}>
           <Image src={loginImage} width={400} height={800} className='' />
         </div>
-        <div className=' px-5 py-10 h-full rounded-md relative w-full '>
+        <div className=' px-5 py-10 h-full rounded-sm relative w-[700px] '>
           <h1 className="text-2xl font-bold text-center">Login</h1>
           <form className="space-y-6">
             <div className="space-y-1 text-sm">
               <label htmlFor="eamil" className="block">Email</label>
-              <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border border-gray-300" />
+              <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-sm border border-gray-300" />
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="password" className="block">Password</label>
-              <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border border-gray-300" />
+              <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-sm border border-gray-300" />
               <div className="flex justify-end text-xs">
                 <Link href={""} >Forgot Password?</Link>
               </div>
             </div>
 
-            <button type='submit' className='btn bg-orange-500 w-full text-white relative rounded-md min-h-[40px]'>{loading ?
+            <button type='submit' className='btn bg-orange-500 w-full text-white relative rounded-sm min-h-[40px]'>{loading ?
               <div className="absolute right-1/2 bottom-1/2 transform translate-x-1/2 translate-y-1/2 ">
                 <div className="border-t-transparent border-solid animate-spin  rounded-full border-white border-2 h-5 w-5"></div>
               </div> : 'Sing Up'

@@ -2,32 +2,50 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa'
-import img1 from '../../assets/images/1.png'
 import Link from 'next/link'
 import MainCard from '@/components/Card/MainCard/MainCard'
 import { productsData } from '@/utlits/productsData'
 import Head from 'next/head'
 import AdsBanner from '@/components/AdsBanner/AdsBanner'
+import { useDispatch } from 'react-redux'
+import StarRating from '@/components/StarRating/StarRating'
+import { addToCart } from '@/redux/features/addCart/cartSlice'
+import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice'
+import { toast } from 'react-hot-toast'
 
 const ProductDeteles = () => {
   const [detailsInfo, setDetailsInfo] = useState(0)
-  const [imageUrl, setImageUrl] = useState(img1)
+  const [imageUrl, setImageUrl] = useState()
   const [product, setProduct] = useState({})
   const [reletedProducts, setReletedProducts] = useState([])
   const router = useRouter()
+  const dispatch = useDispatch()
+
 
 
   useEffect(() => {
     const filteredProduct = productsData.filter(({ id }) => id == router.query.id)
-    const reletedFilteredProduct = productsData.filter(({ title }) => title == product?.title)
     setProduct(...filteredProduct)
+
+    // ----- Filtering reletad product 
+    const reletedFilteredProduct = productsData.filter(({ department }) => department == product?.department)
     setReletedProducts(reletedFilteredProduct)
   }, [product, router])
+
   const handleImages = (event) => {
     setImageUrl(event.target.src)
-
   }
-
+  let id;
+  let title;
+  let image;
+  let price
+  if (product) {
+    id = product.id
+    title = product.title
+    image = product.image
+    price = product.price
+  }
+  console.log(id, title)
   return (
     <>
       <section className='max-w-7xl mx-auto px-3 mt-12 mb-20'>
@@ -37,44 +55,28 @@ const ProductDeteles = () => {
         </Head>
         <div className="flex md:flex-row flex-col items-center md:items-start md:space-x-10">
           <div className="basis-[45%] w-full bg-white flex lg:flex-row flex-col px-2 py-3 mb-5">
-            <div className='flex lg:flex-col flex-row order-2 lg:order-1'>
-              {/* {product?.images?.map((image, id) => (
-            ))} */}
+            <div className='flex lg:flex-col flex-row order-2 lg:order-1 mx-auto'>
               <Image onClick={handleImages} src={require("../../assets/images/2.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
               <Image onClick={handleImages} src={require("../../assets/images/2.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
             </div>
-            <Image src={imageUrl} alt="img" height={400} width={400} className="h-[400px]  rounded-md border object-contain order-1 lg:order-2 mb-3 lg:mb-0" />
+            <Image src={imageUrl || product?.image} alt="img" height={400} width={400} className="sm:h-[400px] h-[300px] sm:w-[400px] w-[300px] rounded-md border object-contain order-1 lg:order-2 mb-3 lg:mb-0 mx-auto" />
           </div>
           {/* ------- Title Area */}
           <div className='basis-[55%] w-full bg-white px-2 py-3 mb-5'>
             <p className='text-orange-500 font-medium  text-sm'>Product ID:  <small className='text-black/60'>1235647l</small></p>
             <div className=" mt-4">
-              <h1 className=" lg:text-3xl text-2xl font-semibold text-black/90">
-                {"Title"}
+              <h1 className=" lg:text-3xl sm:text-2xl text-xl font-semibold text-black/90">
+                {product?.title}
               </h1>
               <div className='flex items-center gap-4'>
-                <ul className='flex gap-1'>
-                  <li>
-                    <FaStar className='text-sm text-orange-500' />
-                  </li>
-                  <li>
-                    <FaStar className='text-sm text-orange-500' />
-                  </li>
-                  <li>
-                    <FaStar className='text-sm text-orange-500' />
-                  </li>
-                  <li>
-                    <FaStar className='text-sm text-orange-500' />
-                  </li>
-                  <li>
-                    <FaStar className='text-sm text-orange-500' />
-                  </li>
-                </ul>
+                <div>
+                  <StarRating star={product?.rating} />
+                </div>
                 <p className='text-sm text-black/90'>445 Reviws</p>
               </div>
               <div className='mt-3 flex items-center gap-3'>
                 <p className='text-sm bg-green-600 bg-opacity-70 text-white rounded-full px-2 '>50% off</p>
-                <b className="text-black/90 text-2xl font-bold">$50</b>
+                <b className="text-black/90 sm:text-2xl text-xl font-bold">${product?.price}</b>
               </div>
             </div>
             <hr className=' my-5 border-black/20' />
@@ -82,9 +84,9 @@ const ProductDeteles = () => {
               <div>
                 <p className='font-semibold text-base'>Select Color</p>
                 <div className='flex gap-4 mt-1'>
-                  <div className='bg-black w-10 h-10 cursor-pointer'></div>
-                  <div className='bg-red-700 w-10 h-10 cursor-pointer'></div>
-                  <div className='bg-blue-700 w-10 h-10 cursor-pointer'></div>
+                  <div className='bg-black sm:w-10 sm:h-10 w-8 h-8 cursor-pointer'></div>
+                  <div className='bg-red-700 sm:w-10 sm:h-10 w-8 h-8 cursor-pointer'></div>
+                  <div className='bg-blue-700 sm:w-10 sm:h-10 w-8 h-8 cursor-pointer'></div>
                 </div>
               </div>
               <div className='mt-5'>
@@ -96,7 +98,6 @@ const ProductDeteles = () => {
                   <div className='bg-slate-200 bg-opacity-70 w-10 h-7 text-sm cursor-pointer flex justify-center items-center'>XXL</div>
                 </div>
               </div>
-
             </div>
             <div className='mt-5'>
               <p className='text-sm text-black/60 mb-1'>Free Delevry</p>
@@ -104,21 +105,18 @@ const ProductDeteles = () => {
               <p className='text-sm text-black/60 mb-1'>Cash On Devevary</p>
             </div>
             <div className='sm:flex gap-5 items-center'>
-              <button className="w-full h-10 bg-orange-500 text-white font-medium mt-4">Add To Cart</button>
-              <button className="w-full h-10 border-orange-500 border font-medium mt-4">Add To Withlist</button>
+              <button className="w-full h-10 bg-orange-500 text-white font-medium mt-4" onClick={() => (dispatch(addToCart({ id, title, price, image })), toast.success("Add To Cart Success"))}>Add To Cart</button>
+              <button className="w-full h-10 border-orange-500 border font-medium mt-4" onClick={() => (dispatch(addToWhiteList(id)), toast.success('Add To White List Success'))}>Add To Withlist</button>
             </div>
           </div>
-          {/* -------- Ads */}
 
         </div>
         <div className='flex md:flex-row flex-col items-start md:space-x-10'>
           {/* ---- Releted Product */}
-          <div className='basis-[45%] w-full order-2 md:order-1'>
+          <div className='basis-[45%] w-full order-2 md:order-1 mt-7 md:mt-0'>
             <h5 className='text-xl font-semibold'>Releted Products</h5>
             <div className=' mt-3 grid sm:grid-cols-2 gap-5'>
               {reletedProducts.slice(0, 4).map(({ id, title, image, price }) => <MainCard key={id} title={title} price={price} image={image} />)}
-
-              {/* <MainCard /> */}
             </div>
           </div>
 
@@ -140,9 +138,9 @@ const ProductDeteles = () => {
               }
               {
                 detailsInfo === 1 &&
-                <div className='bg-white px-2 py-3'>
+                <div className='bg-white px-2 py-3 sm:w-[96vw] w-[95vw] md:w-full'>
                   <div className="overflow-x-auto">
-                    <table className="min-w-full text-xs">
+                    <table className="w-full text-xs">
                       <tbody>
                         <tr >
                           <td className="p-3">

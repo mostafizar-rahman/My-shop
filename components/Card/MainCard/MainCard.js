@@ -8,26 +8,11 @@ import Link from "next/link";
 import StarRating from "@/components/StarRating/StarRating";
 import { addToWhiteList } from "@/redux/features/whiteList/whiteListSlice";
 import toast from 'react-hot-toast';
-import { motion } from "framer-motion";
+
 const MainCard = ({ id, title, price, image, description, quantity }) => {
   const dispatch = useDispatch()
-  const cardVariants = {
-    offscreen: {
-      y: 50
-    },
-    onscreen: {
-      y: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
-
-      }
-    }
-  };
   return (
     <div
-      variants={cardVariants}
       className="relative  overflow-hidden bg-white p-4 group "
     >
       {quantity === 0 &&
@@ -50,12 +35,12 @@ const MainCard = ({ id, title, price, image, description, quantity }) => {
           </div>
         </div>
         <p className="text-sm">{description}</p>
-        <button onClick={() => (dispatch(addToCart({ id, title, price, image })), toast.success("Add To Cart Success"))} className="w-full h-10 bg-orange-500 text-white font-medium mt-4">Add To Cart</button>
+        <button onClick={() => (dispatch(addToCart({ id, title, price, image })), toast.success("Add To Cart Success"))} className="w-full h-10 bg-orange-500 text-white font-medium mt-4 hover:scale-90 duration-700 ease-in-out">Add To Cart</button>
       </div>
-      <div className=" absolute top-1/2 -translate-y-1/2 right-0 invisible group-hover:visible group-hover:right-5 transition-all">
-        <AiOutlineHeart onClick={() => (dispatch(addToWhiteList(id)), toast.success('Add To White List Success'))} className="text-2xl text-white cursor-pointer" />
-        <Link href={`productDetails/${id}`}>
-          <AiOutlineEye className="text-2xl mt-2 text-white cursor-pointer" />
+      <div className=" absolute top-1/3  right-0 invisible group-hover:visible group-hover:right-5 transition-all">
+        <AiOutlineHeart onClick={() => (dispatch(addToWhiteList(id)), toast.success('Add To White List Success'))} className="text-3xl text-white cursor-pointer" />
+        <Link href={`/productDetails/${id}`}>
+          <AiOutlineEye className="text-3xl mt-2 text-white cursor-pointer" />
         </Link>
       </div>
     </div>

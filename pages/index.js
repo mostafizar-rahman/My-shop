@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
-import { motion } from "framer-motion"
 import Banner from '@/components/Banner/Banner'
 import { categoryListData } from '@/utlits/categoryListData'
 import CategorieCard from '@/components/CategorieCard/CategorieCard'
@@ -70,11 +69,8 @@ const Home = ({ data }) => {
       </Head>
       {/* ----- Banner */}
       <Banner />
-      {/* ------ Featured Products */}
+      {/* ------ Top Selles Products */}
       <div
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
         className='mx-auto max-w-7xl px-3 mt-10  '
       >
         <div className="group/best">
@@ -93,10 +89,10 @@ const Home = ({ data }) => {
             loop={true}
           >
             {
-              productsData.map(({ id, image, title, price, rating }) => {
+              data.map(({ id, image, title, price, rating }) => {
                 return (
-                  <SwiperSlide>
-                    <HorizontalCard key={id} id={id} image={image} title={title} price={price} rating={rating} />
+                  <SwiperSlide key={id}>
+                    <HorizontalCard id={id} image={image} title={title} price={price} rating={rating} />
                   </SwiperSlide>
                 )
               })
@@ -117,26 +113,20 @@ const Home = ({ data }) => {
       </div>
       {/* ------ Category  */}
       <div
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
         className='mx-auto max-w-7xl px-3 mt-14'
       >
         <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
-            categoryListData.slice(0, 3).map(({ id, category, subCategory }) => <CategorieCard id={id} category={category} subCategory={subCategory} />)
+            categoryListData.slice(0, 3).map(({ id, category, subCategory }) => <CategorieCard key={id} id={id} category={category} subCategory={subCategory} />)
           }
         </div>
       </div>
-      {/* ------ Featured Products */}
+      {/* ------ Popular Products */}
       <div
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
         className='mx-auto max-w-7xl px-3 mt-14'
       >
         <div className="group/best">
-          <h3 className='text-2xl font-bold mb-3 border-b-[2px] inline-block border-b-orange-500'>Popular products</h3>
+          <h3 className='text-2xl font-bold mb-3 border-b-[2px] inline-block border-b-orange-500'>Popular</h3>
           <Swiper
 
             modules={[Navigation, Autoplay,]}
@@ -151,10 +141,10 @@ const Home = ({ data }) => {
             loop={true}
           >
             {
-              productsData.map(({ id, image, title, price, rating }) => {
+              data.map(({ id, image, title, price, rating }) => {
                 return (
-                  <SwiperSlide>
-                    <HorizontalCard key={id} id={id} image={image} title={title} price={price} rating={rating} />
+                  <SwiperSlide key={id}>
+                    <HorizontalCard id={id} image={image} title={title} price={price} rating={rating} />
                   </SwiperSlide>
                 )
               })
@@ -175,15 +165,12 @@ const Home = ({ data }) => {
       </div>
       {/* ------ Products */}
       <div
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
-        className='mx-auto max-w-7xl px-3 mt-20'
+        className='mx-auto max-w-7xl px-3 mt-14'
       >
         <h3 className='text-2xl font-bold mb-3 border-b-[2px] inline-block border-b-orange-500'>For You</h3>
         <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
-            data.slice(0, 10).map(({ id, title, image, price, quantity }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
+            data.slice(0, 10).map(({ id, title, image, price }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
           }
         </div>
       </div>
@@ -191,108 +178,105 @@ const Home = ({ data }) => {
       <AdsBanner />
       {/* ------ Products */}
       <div
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
         className='mx-auto max-w-7xl px-3 mt-10'>
         <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
-            data.slice(0, 5).map(({ id, title, image, price, quantity }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
+            data.slice(0, 5).map(({ id, title, image, price }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
           }
         </div>
       </div>
       {/* ------ Brands */}
       <div className=' brands mx-auto max-w-7xl px-3 mt-28 mb-10'>
         <Swiper
-           modules={[Navigation, Autoplay]}
-           spaceBetween={0}
-           slidesPerView={perView2}
-           autoplay={{ delay: 1000 }}
-           loop={true}
+          modules={[Navigation, Autoplay]}
+          spaceBetween={0}
+          slidesPerView={perView2}
+          autoplay={{ delay: 1000 }}
+          loop={true}
         >
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/2.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/2.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/3.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/3.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/4.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/4.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/5.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/5.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image src={require("../assets/brands/6.png")} width={100} height={100} />
+              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
             </div>
           </SwiperSlide>
 

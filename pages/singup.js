@@ -6,12 +6,12 @@ import Link from 'next/link'
 const Singup = () => {
   const [loading, setLoading] = useState(false)
   return (
-    <section className='mx-auto max-w-3xl bg-white' >
-      <div className='flex items-center justify-center px-1'>
-        <div className='min-h-[600px] w-[800px] md:flex items-center  hidden' style={{ background: `linear-gradient(135deg, #46DD82, #63C52E)` }}>
+    <section className='mx-auto max-w-5xl bg-white mt-12 mb-10' >
+      <div className='flex items-center justify-center p-1'>
+        <div className='min-h-[600px] w-full md:flex items-center justify-center hidden' style={{ background: `linear-gradient(135deg, #46DD82, #63C52E)` }}>
           <Image src={loginImage} width={400} height={800} className='' />
         </div>
-        <div className=' px-5 py-10 h-full rounded-md relative w-full '>
+        <div className=' px-5 py-10 h-full rounded-md relative w-[700px] '>
           <h1 className="text-2xl font-bold text-center">Singup</h1>
           <form className="space-y-6">
             <div className="space-y-1 text-sm">
@@ -58,8 +58,8 @@ const Singup = () => {
               </svg>
             </button>
           </div>
-          <p className="text-xs absolute bottom-0 right-5 text-right">Don't have an account?
-            <Link href='/singup' className="underline font-bold">Sign up</Link>
+          <p className="text-xs absolute bottom-0 right-5 text-right">You have an account?
+            <Link href='/login' className="underline font-bold">Login</Link>
           </p>
         </div>
       </div>

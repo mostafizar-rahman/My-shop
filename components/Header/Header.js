@@ -15,13 +15,16 @@ const Header = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false)
   const cartItems = useSelector((state) => state.addCart.cart)
 
+  const whiteListItem = useSelector((state) => state.whiteList.whitList)
+
+
   const totalQuantity = cartItems.reduce(
     (total, product) => total + product?.quantity,
     0
   );
 
   return (
-    <header className=" bg-[#101f32] relative">
+    <header className="max-w-[1900px] mx-auto bg-[#101f32] relative">
       <div className="hidden md:block">
         <div className=" mx-auto max-w-7xl px-3 py-3 flex justify-between items-center ">
           <div>
@@ -39,7 +42,7 @@ const Header = () => {
         <div className="mx-auto max-w-7xl px-3 pt-5 pb-3 flex justify-between items-center">
           <div className="relative group">
             <b className="cursor-pointer bg-orange-500 px-5 py-3  text-white">SHOP BY CATEGORY</b>
-            <div className="absolute w-full top-[120%] left-0 z-50 invisible group-hover:visible">
+            <div className="absolute w-max top-[120%] left-0 z-50 invisible group-hover:visible">
               <CategoryList />
             </div>
           </div>
@@ -55,7 +58,8 @@ const Header = () => {
             </ul>
           </nav>
           <div className="flex items-center gap-5">
-            <button onClick={() => setWhiteList(true)}>
+            <button onClick={() => setWhiteList(true)} className="relative">
+              <div className="absolute -right-2 -top-2 bg-orange-500 text-white w-4 h-4 rounded-full flex justify-center items-center text-[13px]">{whiteListItem.length}</div>
               <AiOutlineHeart className="text-2xl cursor-pointer text-white hover:text-orange-500" />
             </button>
             <button onClick={() => setCart(true)} className="relative">
@@ -73,7 +77,8 @@ const Header = () => {
             <button onClick={() => setIsRegisterOpen(!isRegisterOpen)}>
               <AiOutlineUser className="text-2xl text-white hover:text-orange-500" />
             </button>
-            <button onClick={() => setWhiteList(true)}>
+            <button onClick={() => setWhiteList(true)} className="relative">
+              <div className="absolute -right-2 -top-2 bg-orange-500 text-white w-4 h-4 rounded-full flex justify-center items-center text-[13px]">{whiteListItem.length}</div>
               <AiOutlineHeart className="text-2xl cursor-pointer text-white hover:text-orange-500" />
             </button>
             <button onClick={() => setCart(true)} className="relative">
@@ -93,16 +98,17 @@ const Header = () => {
           </div>
         </div>
         <div
-          className={`bg-[#ddd] min-h-screen h-full min-w-[200px] fixed  top-0 z-50 p-5 duration-700 ${isMenuOpen ? "left-0" : "-left-[160%]"
+          className={`bg-[#101f32] min-h-screen h-full min-w-[200px] fixed  top-0 z-50 p-5 duration-700 ${isMenuOpen ? "left-0" : "-left-[160%]"
             }`}
         >
           <div>
-            <CategoryList />
             <SearchBox />
+            <CategoryList />
           </div>
         </div>
       </div>
-      <div className={`absolute top-full z-40 right-0 ${isRegisterOpen ? 'visible' : 'invisible'}  h-auto w-auto bg-[#101f32] text-white p-3`}>
+
+      <div className={`absolute z-40 top-full right-0 ${isRegisterOpen ? 'visible  ' : 'invisible '} transition-all   w-auto bg-[#101f32] text-white p-3`}>
         <div>
           <Link href={"/login"} className="font-semibold hover:text-orange-500">Log in</Link>
 
@@ -114,6 +120,7 @@ const Header = () => {
           <p className="text-sm mt-1">If you have don't account plase login</p>
         </div>
       </div>
+
       <Cart cart={cart} setCart={setCart} />
       <WhiteList whiteList={whiteList} setWhiteList={setWhiteList} />
     </header>

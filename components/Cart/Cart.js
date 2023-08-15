@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { dicrementProduct, incrementProduct, removeToCart } from "@/redux/features/addCart/cartSlice";
 import { AiOutlineDelete } from "react-icons/ai";
+import Checkout from "../Checkout/Checkout";
 
 const Cart = ({ cart, setCart }) => {
   const cartItems = useSelector((state) => state.addCart.cart)
@@ -31,7 +32,7 @@ const Cart = ({ cart, setCart }) => {
       <div >
         <div className="mx-auto max-w-3xl">
           <div className="text-center">
-            <h1 className="text-xl font-bold text-white sm:text-3xl">My Product</h1>
+            <h1 className="text-xl font-bold text-white sm:text-2xl">My Product</h1>
           </div>
 
           <div className="mt-8">
@@ -45,22 +46,23 @@ const Cart = ({ cart, setCart }) => {
                           src={image}
                           width={64}
                           height={64}
-                          alt=""
+                          alt="image"
                           className="h-20 w-20 rounded object-contain bg-white p-1"
                         />
                         <div>
-                          <h3 className="text-sm text-white">{title}</h3>
-                          <small className="text-slate-100/70 ">
-                            Price: {price}
-                          </small>
-                          <br />
-                          <small className="text-slate-100/70 ">
-                            Color: {"red"}
-                          </small>
-                          <br />
-                          <small className="text-slate-100/70 ">
-                            Size: {"M"}
-                          </small>
+                          <h3 className="text-sm text-white">
+                            {title.length > 30 ? title.slice(0, 30) + '...' : title}</h3>
+                          <div className="flex flex-col">
+                            <small className="text-slate-100/70 ">
+                              Price: {price}
+                            </small>
+                            <small className="text-slate-100/70 ">
+                              Color: {"red"}
+                            </small>
+                            <small className="text-slate-100/70 ">
+                              Size: {"M"}
+                            </small>
+                          </div>
                         </div>
                       </div>
 
@@ -112,23 +114,24 @@ const Cart = ({ cart, setCart }) => {
               <div className="w-screen max-w-lg space-y-4">
                 <dl className="space-y-0.5 text-sm text-white">
                   <div className="flex justify-between !text-base font-medium">
-                    <dt>Total</dt>
-                    <dd>${totalPrice}</dd>
+                    <dt className="font-semibold text-xl">Total</dt>
+                    <dd className="text-lg"><span className="text-sm">$</span>{totalPrice}</dd>
                   </div>
                 </dl>
 
                 <div className="flex justify-end">
-                  <Link
-                    href="/login"
-                    className="block rounded bg-orange-500 px-5 py-3 text-sm text-gray-100 transition hover:bg-orange-600"
+                  <button
+                    type="submit"
+                    className="btn bg-orange-500 hover:scale-90 duration-700 ease-in-out text-white rounded-sm inline-block sm:px-14 px-10 py-2 sm:py-3 mt-5"
                   >
                     Checkout
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </aside>
   );

@@ -25,22 +25,17 @@ const Product = () => {
         setMainProductList(product)
 
 
-        if (brandsName.length) {
-            console.log(brandsName)
-            const filterProducts = mainProductList.filter(({ brands }) => {
-                return (
-                    brandsName.some((brand) => brands === brand)
-                )
-            })
-            setProductList(filterProducts)
-        }
 
 
-        if (departmentName.length) {
+        if (departmentName.length || brandsName.length) {
             // --- Filter product my Department name
-            const filterProducts = mainProductList.filter(({ department }) => {
+
+            const filterProducts = mainProductList.filter(({ department, brands }) => {
                 return (
-                    departmentName.some((val) => department === val)
+
+                    departmentName.some((val) => department === val) ||
+                    brandsName.some((brand) => brands === brand)
+
                 )
             })
             setProductList(filterProducts)
@@ -90,7 +85,7 @@ const Product = () => {
             setDepartmentName([...departmentName, department]);
         }
     }
-console.log(departmentName)
+
     const handleBrandFilter = (brand) => {
         if (brandsName.includes(brand)) {
             setBrandsName(brandsName.filter((val) => val !== brand));
@@ -119,7 +114,7 @@ console.log(departmentName)
 
 
     return (
-        <div className='mx-auto max-w-7xl px-3 mt-16 mb-10'>
+        <div className='mx-auto max-w-7xl px-3 mt-12 mb-10'>
             <Head>
                 <title>MySHOP.com-Product By Category</title>
                 <link rel="icon" href="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_640.png" />
