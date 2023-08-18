@@ -31,3 +31,10 @@ body {
 .brands .swiper-wrapper{
   align-items: center;
 }
+
+/* Modal */
+.ReactModal__Overlay  {
+  z-index: 1000 !important;
+  height: 100%;
+  overflow-x: auto;
+}

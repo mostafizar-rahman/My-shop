@@ -8,6 +8,7 @@ import img22 from "../assets/images/22.png";
 import img23 from "../assets/images/23.png";
 import img24 from "../assets/images/24.png";
 import watch from "../assets/images/watch.png";
+import tshart from "../assets/images/tshart.png";
 
 export const productsData = [
 
@@ -18,21 +19,23 @@ export const productsData = [
     subCategory: "Clothing",
     title: "Fair Indigo Men's Organic All-Cotton Luxe Henley Shirt",
     price: 500,
-    quantity: 10,
-    color: "Black",
+    quantity: 0,
+    color: ["Black", "Red", "Blue"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Gildan",
     rating: 5,
     department: 'Shart'
   },
   {
     id: 3,
-    image: imag2,
+    image: tshart,
     category: "Men's Fashion",
     subCategory: "Clothing",
     title: "Vertx Men's Coldblack Short Sleeve Polo Shirt, Long Body",
     price: 1000,
     quantity: 10,
-    color: "White",
+    color: ["White", "Yellow", "Orenge"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Dickies",
     rating: 4,
     department: "T-shart"
@@ -45,9 +48,10 @@ export const productsData = [
     title: "Lederhosen Shoes, Haferl Shoes, Trachten Shoes in Dark Brown w/Embroidery",
     price: 40,
     quantity: 10,
-    color: "Black",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Crocs",
-    rating: 2,
+    rating: 2.5,
     department: 'Shoes'
   },
   {
@@ -57,8 +61,9 @@ export const productsData = [
     subCategory: "Shoes",
     title: "Under Armour Men's Charged Assert 9 Running Shoe",
     price: 50,
-    quantity: 10,
-    color: "Red",
+    quantity: 0,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Reef",
     rating: 3,
     department: 'Sandals'
@@ -71,7 +76,8 @@ export const productsData = [
     title: "Crocs Unisex Offroad Sport Clogs",
     price: 20,
     quantity: 10,
-    color: "Green",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Reef",
     rating: 4,
     department: 'Sandals'
@@ -84,7 +90,8 @@ export const productsData = [
     title: "Movado Bold Men's Swiss Quartz Stainless Steel and Silicone Strap Watch, Color: Black (Model: 3600854)",
     price: 80,
     quantity: 10,
-    color: "Black",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Casio",
     rating: 3,
     department: 'Wrist Watches'
@@ -97,7 +104,8 @@ export const productsData = [
     title: "Casio Men's MDV106-1AV 200 M WR Black Dive Watch (MDV106-1A)",
     price: 5000,
     quantity: 10,
-    color: "Golden",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Sumsing",
     rating: 4,
     department: 'Pocket Watches'
@@ -110,7 +118,8 @@ export const productsData = [
     title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
     price: 40,
     quantity: 10,
-    color: "Black",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "HP",
     rating: 4,
     department: 'Pocket Watches'
@@ -123,7 +132,8 @@ export const productsData = [
     title: `ASUS Vivobook Laptop L210 11.6" Ultra Thin Laptop, Intel Celeron N4020 Processor, 4GB RAM, 128GB eMMC Storage, Windows 11 Home in S Mode with One Year of Office 365 Personal, L210MA-DS04,Star Black`,
     price: 90,
     quantity: 10,
-    color: "Black",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "ASUS",
     rating: 5,
     department: 'Pocket Watches'
@@ -136,7 +146,8 @@ export const productsData = [
     title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
     price: 60,
     quantity: 10,
-    color: "Skiy",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Samsung",
     rating: 5,
     department: 'Pocket Watches'
@@ -150,7 +161,8 @@ export const productsData = [
     title: "18-inch Coronado Designer Oval Bathroom Shower Grab Bar with Mitered Corners, Polished",
     price: 350,
     quantity: 10,
-    color: "White",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "RENPHO",
     rating: 5,
     department: 'Pocket Watches'
@@ -163,7 +175,8 @@ export const productsData = [
     title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
     price: 20,
     quantity: 10,
-    color: "Blue",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Apple",
     rating: 5,
     department: 'Pocket Watches'
@@ -176,7 +189,8 @@ export const productsData = [
     title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
     price: 220,
     quantity: 10,
-    color: "Red",
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
     brands: "Wood",
     rating: 5,
     department: 'Pocket Watches'

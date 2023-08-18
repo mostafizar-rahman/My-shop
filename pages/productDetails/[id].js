@@ -15,7 +15,7 @@ import { toast } from 'react-hot-toast'
 
 const ProductDeteles = () => {
   const [detailsInfo, setDetailsInfo] = useState(0)
-  const [imageUrl, setImageUrl] = useState()
+  const [currentImage, setCurrentImage] = useState()
   const [product, setProduct] = useState({})
   const [reletedProducts, setReletedProducts] = useState([])
   const router = useRouter()
@@ -33,7 +33,7 @@ const ProductDeteles = () => {
   }, [product, router])
 
   const handleImages = (event) => {
-    setImageUrl(event.target.src)
+    setCurrentImage(event.target.src)
   }
   let id;
   let title;
@@ -45,7 +45,7 @@ const ProductDeteles = () => {
     image = product.image
     price = product.price
   }
-  console.log(id, title)
+
   return (
     <>
       <section className='max-w-7xl mx-auto px-3 mt-12 mb-20'>
@@ -59,7 +59,10 @@ const ProductDeteles = () => {
               <Image onClick={handleImages} src={require("../../assets/images/2.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
               <Image onClick={handleImages} src={require("../../assets/images/2.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
             </div>
-            <Image src={imageUrl || product?.image} alt="img" height={400} width={400} className="sm:h-[400px] h-[300px] sm:w-[400px] w-[300px] rounded-md border object-contain order-1 lg:order-2 mb-3 lg:mb-0 mx-auto" />
+            {product?.image &&
+              <Image src={currentImage || product?.image} alt="img" height={400} width={400} className="sm:h-[400px] h-[300px] sm:w-[400px] w-[300px] rounded-md border object-contain order-1 lg:order-2 mb-3 lg:mb-0 mx-auto" />
+            }
+
           </div>
           {/* ------- Title Area */}
           <div className='basis-[55%] w-full bg-white px-2 py-3 mb-5'>

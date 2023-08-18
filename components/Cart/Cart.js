@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { dicrementProduct, incrementProduct, removeToCart } from "@/redux/features/addCart/cartSlice";
 import { AiOutlineDelete } from "react-icons/ai";
 import Checkout from "../Checkout/Checkout";
+import QuentityButton from "../QuentityButton/QuentityButton";
 
 const Cart = ({ cart, setCart }) => {
   const cartItems = useSelector((state) => state.addCart.cart)
@@ -38,7 +39,7 @@ const Cart = ({ cart, setCart }) => {
           <div className="mt-8">
             <ul className="space-y-4">
               {
-                cartItems.map(({ id, quantity, image, price, title }) => {
+                cartItems.map(({ id, quantity, image, price, title, activeColor, activeSize }) => {
                   return (
                     <li key={id} className="flex justify-between gap-4">
                       <div className="flex gap-3">
@@ -57,46 +58,17 @@ const Cart = ({ cart, setCart }) => {
                               Price: {price}
                             </small>
                             <small className="text-slate-100/70 ">
-                              Color: {"red"}
+                              Color: {activeColor}
                             </small>
                             <small className="text-slate-100/70 ">
-                              Size: {"M"}
+                              Size: {activeSize}
                             </small>
                           </div>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-3 h-8">
-                        <div>
-                          <div className="flex items-center rounded border border-gray-200 h-8">
-                            <button
-                              onClick={() => dispatch(dicrementProduct(id))}
-                              type="button"
-                              className="h-8 w-8  text-black/70 bg-white transition hover:opacity-75 rounded-l"
-                            >
-                              -
-                            </button>
-
-                            <span>
-                              <input
-                                type="number"
-                                id="Quantity"
-                                value={quantity}
-                                readOnly
-                                className="h-10 w-16 border-y-0 bg-transparent text-white border-gray-200 text-center "
-                              />
-                            </span>
-
-                            <button
-                              onClick={() => dispatch(incrementProduct(id))}
-                              type="button"
-                              className="h-8 w-8  text-black/70 bg-white transition hover:opacity-75 rounded-r"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-
+                        <QuentityButton id={id} quantity={quantity}/>
                         <button
                           onClick={() => dispatch(removeToCart(id))}
                         >

@@ -170,7 +170,7 @@ const Home = ({ data }) => {
         <h3 className='text-2xl font-bold mb-3 border-b-[2px] inline-block border-b-orange-500'>For You</h3>
         <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
-            data.slice(0, 10).map(({ id, title, image, price }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
+            data.slice(0, 10).map(({ id, title, image, price, quantity, rating, color, sizes }) => <MainCard key={id} id={id} title={title} image={image} price={price} quantity={quantity} rating={rating} color={color} sizes={sizes} />)
           }
         </div>
       </div>
@@ -181,7 +181,7 @@ const Home = ({ data }) => {
         className='mx-auto max-w-7xl px-3 mt-10'>
         <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
           {
-            data.slice(0, 5).map(({ id, title, image, price }) => <MainCard key={id} id={id} title={title} image={image} price={price} />)
+            data.slice(0, 5).map(({ id, title, image, price, quantity, rating, color, sizes }) => <MainCard key={id} id={id} title={title} image={image} price={price} quantity={quantity} rating={rating} color={color} sizes={sizes} />)
           }
         </div>
       </div>
