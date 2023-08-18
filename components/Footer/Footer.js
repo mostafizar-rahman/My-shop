@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../Header/Logo/Logo";
 
 const Footer = () => {
   return (
@@ -6,9 +7,7 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-3 pb-6 pt-16 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="sm:text-left text-center">
-            <h3 className="text-3xl">
-              My<span className="text-orange-500 font-bold ">SHOP</span>
-            </h3>
+           <Logo/>
             <p className="mt-2 max-w-md  leading-relaxed text-slate-200 sm:max-w-xs ">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
               consequuntur amet culpa cum itaque neque.
