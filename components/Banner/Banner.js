@@ -6,7 +6,6 @@ import Home4 from "../../assets/images/home4.png";
 import Home5 from "../../assets/images/home5.jpg";
 import Home6 from "../../assets/images/home6.jpg";
 import { AiFillCalendar } from "react-icons/ai";
-import { motion } from "framer-motion";
 import { FiRefreshCcw } from "react-icons/fi";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
