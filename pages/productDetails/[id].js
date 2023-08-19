@@ -14,14 +14,22 @@ import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice'
 import { toast } from 'react-hot-toast'
 
 const ProductDeteles = () => {
+  const dispatch = useDispatch()
   const [detailsInfo, setDetailsInfo] = useState(0)
   const [currentImage, setCurrentImage] = useState()
   const [product, setProduct] = useState({})
   const [reletedProducts, setReletedProducts] = useState([])
   const router = useRouter()
-  const dispatch = useDispatch()
 
+  const [activeColor, setActiveColor] = useState(null);
+  const [activeSize, setActiveSize] = useState(null);
 
+  const handleColorClick = (cl) => {
+    setActiveColor(cl);
+  };
+  const handleSizeClick = (siz) => {
+    setActiveSize(siz)
+  }
 
   useEffect(() => {
     const filteredProduct = productsData.filter(({ id }) => id == router.query.id)
@@ -38,12 +46,16 @@ const ProductDeteles = () => {
   let id;
   let title;
   let image;
-  let price
+  let price;
+  let color;
+  let sizes;
   if (product) {
     id = product.id
     title = product.title
     image = product.image
     price = product.price
+    color = product.color
+    sizes = product.sizes
   }
 
   return (
@@ -87,18 +99,38 @@ const ProductDeteles = () => {
               <div>
                 <p className='font-semibold text-base'>Select Color</p>
                 <div className='flex gap-4 mt-1'>
-                  <div className='bg-black sm:w-10 sm:h-10 w-8 h-8 cursor-pointer'></div>
-                  <div className='bg-red-700 sm:w-10 sm:h-10 w-8 h-8 cursor-pointer'></div>
-                  <div className='bg-blue-700 sm:w-10 sm:h-10 w-8 h-8 cursor-pointer'></div>
+                  {
+                    color?.map((cl, index) => {
+                      const colorName = cl.toLowerCase()
+                      return (
+                        <div
+                          key={index}
+                          className={` sm:w-10 sm:h-10 w-8 h-8 cursor-pointer ${activeColor === colorName ? 'bg-transparent' : ''}`}
+                          style={{ backgroundColor: activeColor === colorName ? "transparent" : colorName }}
+                          onClick={() => handleColorClick(colorName)}
+                        ></div>
+                      )
+                    })
+                  }
                 </div>
               </div>
               <div className='mt-5'>
                 <p className='font-semibold text-base'>Select Size</p>
                 <div className='flex gap-4 mt-1'>
-                  <div className='bg-slate-200 bg-opacity-70 w-10 h-7 text-sm cursor-pointer flex justify-center items-center'>M</div>
-                  <div className='bg-slate-200 bg-opacity-70 w-10 h-7 text-sm cursor-pointer flex justify-center items-center'>L</div>
-                  <div className='bg-slate-200 bg-opacity-70 w-10 h-7 text-sm cursor-pointer flex justify-center items-center'>XL</div>
-                  <div className='bg-slate-200 bg-opacity-70 w-10 h-7 text-sm cursor-pointer flex justify-center items-center'>XXL</div>
+                  {
+                    sizes?.map((siz, index) => {
+                      const size = siz.toLowerCase()
+                      return (
+                        <div
+                          key={index}
+                          className={` sm:w-10 w-8 h-7 text-[12px] sm:text-sm cursor-pointer flex justify-center items-center ${activeSize === size ? "bg-orange-500 text-white" : "bg-slate-200 bg-opacity-70"} `}
+                          onClick={() => handleSizeClick(size)}
+                        >
+                          <span>{size}</span>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
               </div>
             </div>
@@ -108,7 +140,7 @@ const ProductDeteles = () => {
               <p className='text-sm text-black/60 mb-1'>Cash On Devevary</p>
             </div>
             <div className='sm:flex gap-5 items-center'>
-              <button className="w-full h-10 bg-orange-500 text-white font-medium mt-4" onClick={() => (dispatch(addToCart({ id, title, price, image })), toast.success("Add To Cart Success"))}>Add To Cart</button>
+              <button className="w-full h-10 bg-orange-500 text-white font-medium mt-4" onClick={() => (dispatch(addToCart({ id, title, price, image, activeColor, activeSize })), toast.success("Add To Cart Success"))}>Add To Cart</button>
               <button className="w-full h-10 border-orange-500 border font-medium mt-4" onClick={() => (dispatch(addToWhiteList(id)), toast.success('Add To White List Success'))}>Add To Withlist</button>
             </div>
           </div>
@@ -119,7 +151,7 @@ const ProductDeteles = () => {
           <div className='basis-[45%] w-full order-2 md:order-1 mt-7 md:mt-0'>
             <h5 className='text-xl font-semibold'>Releted Products</h5>
             <div className=' mt-3 grid sm:grid-cols-2 gap-5'>
-              {reletedProducts.slice(0, 4).map(({ id, title, image, price }) => <MainCard key={id} title={title} price={price} image={image} />)}
+              {reletedProducts.slice(0, 4).map(({ id, title, image, price, rating, color, sizes }) => <MainCard key={id} title={title} price={price} image={image} rating={rating} color={color} sizes={sizes}  />)}
             </div>
           </div>
 

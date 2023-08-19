@@ -1,27 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import toast from 'react-hot-toast';
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
-import { addToCart } from "@/redux/features/addCart/cartSlice";
 import StarRating from "@/components/StarRating/StarRating";
 import { addToWhiteList } from "@/redux/features/whiteList/whiteListSlice";
 import ModalWapper from "@/components/ModalWapper/ModalWapper";
-import { useState } from "react";
 
 
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
 const MainCard = ({ id, title, price, image, description, quantity, rating, color, sizes }) => {
   const dispatch = useDispatch()
 

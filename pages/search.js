@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import StarRating from '@/components/StarRating/StarRating';
-import { addToCart } from '@/redux/features/addCart/cartSlice';
-import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice';
-import { productsData } from '@/utlits/productsData';
 import { useRouter } from 'next/router';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
+
+import StarRating from '@/components/StarRating/StarRating';
+import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice';
+import { productsData } from '@/utlits/productsData';
+import ModalWapper from '@/components/ModalWapper/ModalWapper';
 
 const Search = () => {
   const router = useRouter();
   const data = router.query;
   const [searchResult, setSearchResult] = useState([])
   const dispatch = useDispatch()
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   useEffect(() => {
     if (data.search !== '') {
       const result = productsData.filter(({ department }) => {
-        return department.toLocaleLowerCase().includes(data.search.toLocaleLowerCase())
+        return department.toLocaleLowerCase().includes(data?.search?.toLocaleLowerCase())
       })
       setSearchResult(result)
     }
@@ -33,7 +39,7 @@ const Search = () => {
           searchResult.length ?
             <div>
               {
-                searchResult.map(({ id, title, price, rating, image }) => {
+                searchResult.map(({ id, title, price, rating, image, color, sizes }) => {
                   return (
                     <div key={id} className='flex gap-5 mb-5'>
                       <Link href={`/productDetails/${id}`} >
@@ -46,14 +52,16 @@ const Search = () => {
                           <StarRating star={rating} />
                         </div>
                         <div className='sm:flex gap-5 items-center'>
-                          <button className="w-full h-10 bg-orange-500 text-white font-medium mt-4" onClick={() => (dispatch(addToCart({ id, title, price, image })), toast.success("Add To Cart Success"))}>Add To Cart</button>
+                          <button className="w-full h-10 bg-orange-500 text-white font-medium mt-4" onClick={openModal}>Add To Cart</button>
                           <button className="w-full h-10 border-orange-500 border font-medium mt-4" onClick={() => (dispatch(addToWhiteList(id)), toast.success('Add To White List Success'))}>Add To Withlist</button>
                         </div>
                       </div>
+                      <ModalWapper id={id} title={title} image={image} price={price} color={color} sizes={sizes} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
                     </div>
                   )
                 })
               }
+
             </div>
             :
             <p className='text-3xl font-bold text-red-500'>No product </p>

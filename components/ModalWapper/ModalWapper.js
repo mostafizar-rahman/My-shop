@@ -30,7 +30,7 @@ const ModalWapper = ({ modalIsOpen, setIsOpen, id, title, price, image, color, s
     const handleSizeClick =(siz)=>{
         setActiveSize(siz)
     }
-console.log(activeSize)
+
 
     function closeModal() {
         setIsOpen(false);
@@ -64,17 +64,15 @@ console.log(activeSize)
                             <div className='flex gap-4 mt-1'>
                                 {
                                     color?.map((cl, index) => {
-                                        const xx = cl.toLowerCase()
+                                        const colorName = cl.toLowerCase()
                                         return (
                                             <div
                                                 key={index}
-                                                className={`  w-7 h-7 sm:w-9 sm:h-9 cursor-pointer ${activeColor === xx ? 'bg-transparent' : ''}`}
-                                                style={{ backgroundColor: activeColor === xx ? "transparent" : xx }}
-                                                onClick={() => handleColorClick(xx)}
+                                                className={`  w-7 h-7 sm:w-9 sm:h-9 cursor-pointer ${activeColor === colorName ? 'bg-transparent' : ''}`}
+                                                style={{ backgroundColor: activeColor === colorName ? "transparent" : colorName }}
+                                                onClick={() => handleColorClick(colorName)}
                                             ></div>
                                         )
-
-
                                     })
                                 }
 
@@ -85,18 +83,16 @@ console.log(activeSize)
                             <div className='flex gap-4 mt-1'>
                                 {
                                     sizes?.map((siz, index) => {
-                                        const xx = siz.toLowerCase()
+                                        const size = siz.toLowerCase()
                                         return (
                                             <div
                                                 key={index}
-                                                className={` sm:w-10 w-8 h-7 text-[12px] sm:text-sm cursor-pointer flex justify-center items-center ${activeSize === xx ? "bg-orange-500 text-white":"bg-slate-200 bg-opacity-70"} `}
-                                                onClick={() => handleSizeClick(xx)}
+                                                className={` sm:w-10 w-8 h-7 text-[12px] sm:text-sm cursor-pointer flex justify-center items-center ${activeSize === size ? "bg-orange-500 text-white":"bg-slate-200 bg-opacity-70"} `}
+                                                onClick={() => handleSizeClick(size)}
                                             >
-                                                <span>{xx}</span>
+                                                <span>{size}</span>
                                             </div>
                                         )
-
-
                                     })
                                 }
 

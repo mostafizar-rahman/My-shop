@@ -39,50 +39,54 @@ const Cart = ({ cart, setCart }) => {
           <div className="mt-8">
             <ul className="space-y-4">
               {
-                cartItems.map(({ id, quantity, image, price, title, activeColor, activeSize }) => {
-                  return (
-                    <li key={id} className="flex justify-between gap-4">
-                      <div className="flex gap-3">
-                        <Image
-                          src={image}
-                          width={64}
-                          height={64}
-                          alt="image"
-                          className="h-20 w-20 rounded object-contain bg-white p-1"
-                        />
-                        <div>
-                          <h3 className="text-sm text-white">
-                            {title.length > 30 ? title.slice(0, 30) + '...' : title}</h3>
-                          <div className="flex flex-col">
-                            <small className="text-slate-100/70 ">
-                              Price: {price}
-                            </small>
-                            <small className="text-slate-100/70 ">
-                              Color: {activeColor}
-                            </small>
-                            <small className="text-slate-100/70 ">
-                              Size: {activeSize}
-                            </small>
+                !cartItems.length ?
+                  <div>
+                    <h5 className="text-red-500 text-center">No item in your cart</h5>
+                  </div> :
+                  cartItems.map(({ id, quantity, image, price, title, activeColor, activeSize }) => {
+                    return (
+                      <li key={id} className="flex justify-between gap-4">
+                        <div className="flex gap-3">
+                          <Image
+                            src={image}
+                            width={64}
+                            height={64}
+                            alt="image"
+                            className="h-20 w-20 rounded object-contain bg-white p-1"
+                          />
+                          <div>
+                            <h3 className="text-sm text-white">
+                              {title.length > 30 ? title.slice(0, 30) + '...' : title}</h3>
+                            <div className="flex flex-col">
+                              <small className="text-slate-100/70 ">
+                                Price: {price}
+                              </small>
+                              <small className="text-slate-100/70 ">
+                                Color: {activeColor}
+                              </small>
+                              <small className="text-slate-100/70 ">
+                                Size: {activeSize}
+                              </small>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div className="flex items-center gap-3 h-8">
-                        <QuentityButton id={id} quantity={quantity}/>
-                        <button
-                          onClick={() => dispatch(removeToCart(id))}
-                        >
-                          <AiOutlineDelete className="text-white/90 text-xl hover:text-red-600" />
-                        </button>
-                      </div>
-                    </li>
-                  )
-                })
+                        <div className="flex items-center gap-3 h-8">
+                          <QuentityButton id={id} quantity={quantity} />
+                          <button
+                            onClick={() => dispatch(removeToCart(id))}
+                          >
+                            <AiOutlineDelete className="text-white/90 text-xl hover:text-red-600" />
+                          </button>
+                        </div>
+                      </li>
+                    )
+                  })
               }
 
             </ul>
 
-            <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
+            <div className="mt-8 flex justify-end border-t border-gray-600 pt-8">
               <div className="w-screen max-w-lg space-y-4">
                 <dl className="space-y-0.5 text-sm text-white">
                   <div className="flex justify-between !text-base font-medium">

@@ -13,7 +13,7 @@ const CategorieCard = ({ subCategory, category }) => {
           return (
             <Link
               key={id}
-              href={`${category}-${name}`}
+              href={`/categoryProduct/${category}-${name}`}
               className="border border-slate-200 rounded-md py-1 px-2  "
             >
               <Image

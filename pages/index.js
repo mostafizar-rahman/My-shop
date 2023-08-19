@@ -89,10 +89,10 @@ const Home = ({ data }) => {
             loop={true}
           >
             {
-              data.map(({ id, image, title, price, rating }) => {
+              data.map(({ id, image, title, price, rating, color, sizes }) => {
                 return (
                   <SwiperSlide key={id}>
-                    <HorizontalCard id={id} image={image} title={title} price={price} rating={rating} />
+                    <HorizontalCard id={id} image={image} title={title} price={price} rating={rating} color={color} sizes={sizes} />
                   </SwiperSlide>
                 )
               })
@@ -141,10 +141,10 @@ const Home = ({ data }) => {
             loop={true}
           >
             {
-              data.map(({ id, image, title, price, rating }) => {
+              data.map(({ id, image, title, price, rating, color, sizes }) => {
                 return (
                   <SwiperSlide key={id}>
-                    <HorizontalCard id={id} image={image} title={title} price={price} rating={rating} />
+                    <HorizontalCard id={id} image={image} title={title} price={price} rating={rating} color={color} sizes={sizes} />
                   </SwiperSlide>
                 )
               })

@@ -15,11 +15,16 @@ const whiteListSlice = createSlice({
                 state.message = "This product is avibale"
             }
             else {
-                state.whitList.push({id: action.payload})
+                state.whitList.push({ id: action.payload })
             }
+        },
+        removeToWhitList: (state, action) => {
+            console.log(action)
+            const isAviable = state.whitList.filter(({ id }) => id !== action.payload)
+            state.whitList = isAviable
         }
     }
 })
 
-export const { addToWhiteList } = whiteListSlice.actions
+export const { addToWhiteList, removeToWhitList } = whiteListSlice.actions
 export default whiteListSlice.reducer
