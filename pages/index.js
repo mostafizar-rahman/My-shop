@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
-import Banner from '@/components/Banner/Banner'
-import { categoryListData } from '@/utlits/categoryListData'
-import CategorieCard from '@/components/CategorieCard/CategorieCard'
-import { productsData } from '@/utlits/productsData'
-import HorizontalCard from '@/components/Card/HorizontalCard/HorizontalCard'
-import MainCard from '@/components/Card/MainCard/MainCard'
-import AdsBanner from '@/components/AdsBanner/AdsBanner'
 import { BiRightArrow, BiLeftArrow } from "react-icons/bi"
 
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -15,17 +8,32 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
+import Banner from '@/components/Banner/Banner'
+import { categoryListData } from '@/utlits/categoryListData'
+import CategorieCard from '@/components/CategorieCard/CategorieCard'
+import { productsData } from '@/utlits/productsData'
+import HorizontalCard from '@/components/Card/HorizontalCard/HorizontalCard'
+import MainCard from '@/components/Card/MainCard/MainCard'
+import AdsBanner from '@/components/AdsBanner/AdsBanner'
+
+
+
+
 
 
 const Home = ({ data }) => {
   const [screenSize, setScreenSize] = useState(1100)
+
 
   useEffect(() => {
     function handleResize() {
       setScreenSize(window.innerWidth);
     }
 
+
     window.addEventListener('resize', handleResize);
+
+
 
     return () => window.removeEventListener('resize', handleResize);
   }, [])
@@ -64,7 +72,7 @@ const Home = ({ data }) => {
   return (
     <section>
       <Head>
-        <title>MySHOP.com</title>
+        <title>ProductWorld.com</title>
         <link rel="icon" href="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_640.png" />
       </Head>
       {/* ----- Banner */}
@@ -123,7 +131,9 @@ const Home = ({ data }) => {
       </div>
       {/* ------ Popular Products */}
       <div
+
         className='mx-auto max-w-7xl px-3 mt-14'
+
       >
         <div className="group/best">
           <h3 className='text-2xl font-bold mb-3 border-b-[2px] inline-block border-b-orange-500'>Popular</h3>

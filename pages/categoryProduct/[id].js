@@ -28,7 +28,7 @@ const Product = () => {
     return (
         <div className='mx-auto max-w-7xl px-3'>
             <Head>
-                <title>MySHOP.com-Product By Category</title>
+                <title>ProductWorld.com-Product By Category</title>
                 <link rel="icon" href="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_640.png" />
             </Head>
             <div className='grid lg:grid-cols-[18%_auto] md:grid-cols-[26%_auto] sm:grid-cols-1 gap-4 items-start'>

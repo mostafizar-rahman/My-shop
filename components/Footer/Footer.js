@@ -128,36 +128,9 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-slate-50">About Us</p>
+              <p className="text-lg font-medium text-slate-50">Get to Know Us</p>
 
               <ul className="mt-3 space-y-4 text-sm">
-                <li>
-                  <a
-                    className="text-slate-100 transition hover:text-slate-100/75"
-                    href="/"
-                  >
-                    Company History
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-slate-100 transition hover:text-slate-100/75"
-                    href="/"
-                  >
-                    Meet the Team
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-slate-100 transition hover:text-slate-100/75"
-                    href="/"
-                  >
-                    Employee Handbook
-                  </a>
-                </li>
-
                 <li>
                   <a
                     className="text-slate-100 transition hover:text-slate-100/75"
@@ -166,11 +139,30 @@ const Footer = () => {
                     Careers
                   </a>
                 </li>
+
+                <li>
+                  <a
+                    className="text-slate-100 transition hover:text-slate-100/75"
+                    href="/"
+                  >
+                    Blog
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    className="text-slate-100 transition hover:text-slate-100/75"
+                    href="/"
+                  >
+                    About Us
+                  </a>
+                </li>
+
               </ul>
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-slate-50">Our Services</p>
+              <p className="text-lg font-medium text-slate-50">Help</p>
 
               <ul className="mt-3 space-y-4 text-sm">
                 <li>
@@ -178,7 +170,7 @@ const Footer = () => {
                     className="text-slate-100 transition hover:text-slate-100/75"
                     href="/"
                   >
-                    Web Development
+                   Payments
                   </a>
                 </li>
 
@@ -187,7 +179,7 @@ const Footer = () => {
                     className="text-slate-100 transition hover:text-slate-100/75"
                     href="/"
                   >
-                    Web Design
+                    Shipping
                   </a>
                 </li>
 
@@ -196,7 +188,7 @@ const Footer = () => {
                     className="text-slate-100 transition hover:text-slate-100/75"
                     href="/"
                   >
-                    Marketing
+                    Cancellation & Reurns
                   </a>
                 </li>
 
@@ -205,14 +197,14 @@ const Footer = () => {
                     className="text-slate-100 transition hover:text-slate-100/75"
                     href="/"
                   >
-                    Google Ads
+                    Report
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-slate-50">Helpful Links</p>
+              <p className="text-lg font-medium text-slate-50">Consumer Policy</p>
 
               <ul className="mt-3 space-y-4 text-sm">
                 <li>
@@ -220,7 +212,7 @@ const Footer = () => {
                     className="text-slate-100 transition hover:text-slate-100/75"
                     href="/"
                   >
-                    FAQs
+                     Cancellation & Reurns
                   </a>
                 </li>
 
@@ -229,7 +221,15 @@ const Footer = () => {
                     className="text-slate-100 transition hover:text-slate-100/75"
                     href="/"
                   >
-                    Support
+                    Terms of use
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-slate-100 transition hover:text-slate-100/75"
+                    href="/"
+                  >
+                    Security
                   </a>
                 </li>
               </ul>
@@ -240,16 +240,16 @@ const Footer = () => {
 
               <ul className="mt-3 space-y-4 text-sm">
                 <li>
-                  <span className="flex-1 text-slate-100">john@doe.com</span>
+                  <span className="flex-1 text-slate-100">dev.mostafizar@gmail.com</span>
                 </li>
 
                 <li>
-                  <span className="flex-1 text-slate-100">0123456789</span>
+                  <span className="flex-1 text-slate-100">+8801575699193</span>
                 </li>
 
                 <li>
                   <address className="-mt-0.5 flex-1 not-italic text-slate-100">
-                    213 Lane, London, United Kingdom
+                    Lalmonirhat, Bangladesh
                   </address>
                 </li>
               </ul>

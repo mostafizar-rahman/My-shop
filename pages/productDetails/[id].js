@@ -62,7 +62,7 @@ const ProductDeteles = () => {
     <>
       <section className='max-w-7xl mx-auto px-3 mt-12 mb-20'>
         <Head>
-          <title>MySHOP.com-Product Details</title>
+          <title>ProductWorld.com-Product Details</title>
           <link rel="icon" href="https://cdn.pixabay.com/photo/2017/09/17/02/02/png-2757379_640.png" />
         </Head>
         <div className="flex md:flex-row flex-col items-center md:items-start md:space-x-10">
