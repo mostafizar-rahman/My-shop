@@ -17,188 +17,222 @@ import printers from "../assets/images/printers.png";
 export const categoryListData = [
   {
     id: 1,
-    category: "Men's Fashion",
+    label: "Men's Fashion",
     subCategory: [
       {
         id: 1,
         name: "Clothing",
+        path:"man-clothing",
         image: img,
       },
       {
         id: 2,
         name: "Shoes",
+        path:"man-shoes",
         image: shoes,
-      },
-      {
-        id: 3,
-        name: "Watches",
-        image: watch,
-      },
-      {
-        id: 4,
-        name: "Accessories",
-        image: img4,
       },
     ],
   },
   {
     id: 2,
-    category: "Electricity",
+    label: "Electricity",
     subCategory: [
       {
         id: 1,
         name: "Computer",
+        path:"electricity-computer",
         image: dextop,
       },
       {
         id: 2,
         name: "Laptop",
+        path:"electricity-laptop",
         image: img5,
       },
       {
         id: 3,
         name: "Monitors",
+        path:"electricity-monitors",
         image: monitors,
       },
       {
         id: 4,
         name: "Tablet",
+        path:"electricity-tablet",
         image: img10,
       },
       {
         id: 5,
         name: "Printers",
+        path:"electricity-printers",
         image: printers,
+      },
+      {
+        id: 6,
+        name: "Watches",
+        path:"electricity-watches",
+        image: watch,
+      },
+      {
+        id: 7,
+        name: "Accessories",
+        path:"electricity-accessories",
+        image: img4,
       },
     ],
   },
   {
     id: 3,
-    category: "Home And Kitchen",
+    label: "Home And Kitchen",
     subCategory: [
       {
         id: 1,
         name: "Bath",
+        path:"home-bath",
         image: bath,
       },
       {
         id: 2,
         name: "Furniture",
+        path:"home-furniture",
         image: img21,
       },
       {
         id: 3,
         name: "Bedding",
+        path:"home-bedding",
         image: img22,
       },
       {
         id: 4,
         name: "Home Decor",
+        path:"home-home-decor",
         image: img23,
       },
     ],
   },
   {
     id:4,
-    category: "Baby",
+    label: "Baby",
     subCategory: [
       {
         id: 1,
         name: "Baby Care",
+        path:"baby-care",
         image: img20,
       },
       {
         id: 2,
         name: "Gifts",
+        path:"baby-gifts",
         image: img20,
       },
       {
         id: 3,
         name: "Feeding",
+        path:"baby-feeding",
         image: img20,
       },
     ]
   },
   {
     id:5,
-    category: "Beauty and personal care",
+    label: "Beauty and personal care",
     subCategory: [
       {
         id: 1,
         name: "Makeup",
+        path:"beauty-makeup",
         image: img20,
       },
       {
         id: 2,
         name: "Skin Care",
+        path:"beauty-skin-care",
         image: img20,
       },
       {
         id: 3,
         name: "Hair Care",
+        path:"beauty-hair-care",
         image: img20,
       },
     ]
   },
   {
     id:6,
-    category: "Health and Household",
+    label: "health",
     subCategory: [
       {
         id: 1,
         name: "Oral Care",
+        path:"health-oral-care",
         image: img20,
       },
       {
         id: 2,
         name: "Personal Care",
+        path:"health-personal-care",
         image: img20,
       },
       {
         id: 3,
         name: "Sports Nuraition",
+        path:"health-sports-nuraition",
         image: img20,
       },
     ]
   },
   {
     id:7,
-    category: "Toyes and Games",
+    label: "Toyes and Games",
     subCategory: [
       {
         id: 1,
-        name: "Bath",
+        name: "Arts & Crafts",
+        path:"toyes-arts-crafts",
         image: img20,
       },
       {
         id: 2,
-        name: "Bath",
+        name: "Toddler Toys",
+        path:"toyes-toddler",
         image: img20,
       },
       {
         id: 3,
-        name: "Bath",
+        name: "Building Toys",
+        path:"toyes-building",
         image: img20,
       },
     ]
   },
   {
     id:8,
-    category: "Industaial and Scientific",
+    label: "Industaial and Scientific",
     subCategory: [
       {
         id: 1,
-        name: "Bath",
+        name: "Abrasive & Finishing Products",
+        path:"industaial-abrasive-finishing",
         image: img20,
       },
       {
         id: 2,
-        name: "Bath",
+        name: "Additive Manufacturing Products",
+        path:"industaial-additive-manufacturing",
         image: img20,
       },
       {
         id: 3,
-        name: "Bath",
+        name: "Cutting Tools",
+        path:"industaial-cutting-tools",
+        image: img20,
+      },
+      {
+        id: 4,
+        name: "Industrial Hardware",
+        path:"industaial-industrialh-ardware",
         image: img20,
       },
     ]

@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../Header/Logo/Logo";
+import Logo from "../ui/logo";
 
 const Footer = () => {
   return (

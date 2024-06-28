@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 import Link from 'next/link'
-import MainCard from '@/components/Card/MainCard/MainCard'
+
 import { productsData } from '@/utlits/productsData'
 import Head from 'next/head'
 import AdsBanner from '@/components/AdsBanner/AdsBanner'
@@ -12,6 +12,7 @@ import StarRating from '@/components/StarRating/StarRating'
 import { addToCart } from '@/redux/features/addCart/cartSlice'
 import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice'
 import { toast } from 'react-hot-toast'
+import MainCard from '@/components/ui/card/mainCard'
 
 const ProductDeteles = () => {
   const dispatch = useDispatch()

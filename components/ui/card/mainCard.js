@@ -34,9 +34,9 @@ const MainCard = ({ id, title, price, image, description, quantity, rating, colo
           <Image alt="image" src={image} width={200} height={100} className="h-[200px] object-contain mx-auto" />
         </div>
         <div className="mt-3 ">
-          <h4 className="text-base font-medium">
+          <Link href={`/product-details/${id}`} className="text-base font-medium hover:text-orange-500 transition-all duration-500">
             {title.length > 40 ? title.slice(0, 40) + '...' : title}
-          </h4>
+          </Link>
           <div className="flex items-center justify-between mt-2">
             <p className=" font-bold text-xl"> <span className="text-sm font-normal">$</span>{price}</p>
             <div>
@@ -45,10 +45,10 @@ const MainCard = ({ id, title, price, image, description, quantity, rating, colo
           </div>
           <p className="text-sm">{description}</p>
         </div>
-        <button onClick={openModal} className="w-full h-10 bg-orange-500 text-white font-medium mt-4 hover:scale-90 duration-700 ease-in-out  left-0">Add To Cart</button>
+        <button onClick={openModal} className="w-full h-10 bg-orange-500 text-white font-medium mt-4 hover:scale-95 duration-700 ease-in-out  left-0">Add To Cart</button>
         <div className=" absolute top-1/3  right-0 invisible group-hover:visible group-hover:right-5 transition-all">
           <AiOutlineHeart onClick={() => (dispatch(addToWhiteList(id)), toast.success('Add To White List Success'))} className="text-3xl text-white cursor-pointer" />
-          <Link href={`/productDetails/${id}`}>
+          <Link href={`/product-details/${id}`}>
             <AiOutlineEye className="text-3xl mt-2 text-white cursor-pointer" />
           </Link>
         </div>

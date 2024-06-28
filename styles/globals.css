@@ -1,39 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Norican&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Norican&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 body {
+  font-family: "Poppins", sans-serif;
   background-color: #c8cacc;
 }
 
-.swiper-button-next::after, .swiper-button-prev::after {
- display: none;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
-.swiper-button-next, .swiper-button-prev{
+
+.swiper-button-next,
+.swiper-button-prev {
   width: 40px !important;
   height: 40px !important;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.swiper-button-next svg, .swiper-button-prev svg{
+.swiper-button-next svg,
+.swiper-button-prev svg {
   width: 20px !important;
 }
 
-.brands .swiper-wrapper{
+.brands .swiper-wrapper {
   align-items: center;
 }
 
 /* Modal */
-.ReactModal__Overlay  {
+.ReactModal__Overlay {
   z-index: 1000 !important;
   height: 100%;
   overflow-x: auto;

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { productsData } from '@/utlits/productsData'
-import MainCard from '@/components/Card/MainCard/MainCard'
+
 import Head from 'next/head'
 import Sidebar from '@/components/Sidebar/Sidebar'
+import MainCard from '@/components/ui/card/mainCard'
 
 const Product = () => {
     const [productList, setProductList] = useState([])
@@ -13,11 +14,9 @@ const Product = () => {
 
     useEffect(() => {
         const router = query.id
-        const queryPrams = router.split("-")
-        // --- Filtring main category like Men's Fashon 
-        const categoriesProduct = productsData.filter(({ category }) => category === queryPrams[0])
-        // --- Filtring product by sub category like Clothing 
-        const product = categoriesProduct.filter(({ subCategory }) => subCategory === queryPrams[1])
+
+        const product = productsData.filter(({ path }) => path === router)
+
         setProductList(product)
         setMainProductList(product)
 
@@ -43,14 +42,6 @@ const Product = () => {
             </div>
         </div>
     )
-}
-
-
-export async function getServerSideProps() {
-
-    const data = productsData
-
-    return { props: { data } }
 }
 
 

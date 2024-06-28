@@ -1,6 +1,6 @@
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
 import React from 'react'
+import Footer from '@/components/sections/footer'
+import Header from '@/components/sections/header/header'
 
 const MainLayout = ({ children }) => {
     return (
