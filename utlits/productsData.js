@@ -1,6 +1,4 @@
-import img1 from '../assets/images/1.png'
-import imag2 from '../assets/images/2.png'
-import shoes from '../assets/images/shoes.png'
+
 import monitors from "../assets/images/monitors.png";
 import img20 from "../assets/images/20.png";
 import img21 from "../assets/images/21.png";
@@ -8,13 +6,39 @@ import img22 from "../assets/images/22.png";
 import img23 from "../assets/images/23.png";
 import img24 from "../assets/images/24.png";
 import watch from "../assets/images/watch.png";
-import tshart from "../assets/images/tshart.png";
+
+import shoes_1 from '../assets/images/man-fashion/shoes-1.png'
+import shoes_2 from '../assets/images/man-fashion/shoes-2.png'
+import shoes_3 from '../assets/images/man-fashion/shoes-3.png'
+import shoes_4 from '../assets/images/man-fashion/shoes-4.png'
+import shoes_5 from '../assets/images/man-fashion/shoes-5.png'
+import shoes_6 from '../assets/images/man-fashion/shoes-6.png'
+import shoes_7 from '../assets/images/man-fashion/shoes-7.png'
+import shart_1 from "../assets/images/man-fashion/shart-1.png";
+import shart_2 from "../assets/images/man-fashion/shart-2.png";
+import tshart_1 from "../assets/images/man-fashion/tshart-1.png";
+import tshart_2 from "../assets/images/man-fashion/tshart-2.png";
+import tshart_3 from "../assets/images/man-fashion/tshart-3.png";
+import wallet_1 from "../assets/images/man-fashion/wallet-1.png";
+import wallet_2 from "../assets/images/man-fashion/wallet-2.png";
+import wallet_3 from "../assets/images/man-fashion/wallet-3.png";
+import wallet_4 from "../assets/images/man-fashion/wallet-4.png";
+import wallet_5 from "../assets/images/man-fashion/wallet-5.png";
+
+
+import airpod_1 from "@/assets/images/accessories/airpod-1.png"
+import airpod_2 from "@/assets/images/accessories/airpod-2.png"
+import head_phone_1 from "@/assets/images/accessories/head-phone-1.png"
+import head_phone_2 from "@/assets/images/accessories/head-phone-2.png"
+import head_phone_3 from "@/assets/images/accessories/head-phone-3.png"
+import head_phone_4 from "@/assets/images/accessories/head-phone-4.png"
+import head_phone_5 from "@/assets/images/accessories/head-phone-5.png"
 
 export const productsData = [
 
   {
-    id: 1,
-    image: img1,
+    id: '1ufgsvfbsd4vd',
+    image: shart_1,
     category: "Men's Fashion",
     subCategory: "Clothing",
     path: "man-clothing",
@@ -28,8 +52,23 @@ export const productsData = [
     department: 'Shart'
   },
   {
-    id: 3,
-    image: tshart,
+    id: '2cgtsdgchsjcn',
+    image: shart_2,
+    category: "Men's Fashion",
+    subCategory: "Clothing",
+    path: "man-clothing",
+    title: "Fair Indigo Men's Organic All-Cotton Luxe Henley Shirt",
+    price: 500,
+    quantity: 0,
+    color: ["Black", "Red", "Blue"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Gildan",
+    rating: 5,
+    department: 'Shart'
+  },
+  {
+    id: '2vnvbudykbz',
+    image: tshart_1,
     category: "Men's Fashion",
     subCategory: "Clothing",
     path: "man-clothing",
@@ -43,8 +82,38 @@ export const productsData = [
     department: "T-shart"
   },
   {
-    id: 2,
-    image: shoes,
+    id: '3cbdh541cd',
+    image: tshart_2,
+    category: "Men's Fashion",
+    subCategory: "Clothing",
+    path: "man-clothing",
+    title: "Vertx Men's Coldblack Short Sleeve Polo Shirt, Long Body",
+    price: 1000,
+    quantity: 10,
+    color: ["White", "Yellow", "Orenge"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Dickies",
+    rating: 4,
+    department: "T-shart"
+  },
+  {
+    id: '4cndsicbv',
+    image: tshart_3,
+    category: "Men's Fashion",
+    subCategory: "Clothing",
+    path: "man-clothing",
+    title: "Vertx Men's Coldblack Short Sleeve Polo Shirt, Long Body",
+    price: 1000,
+    quantity: 10,
+    color: ["White", "Yellow", "Orenge"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Dickies",
+    rating: 4,
+    department: "T-shart"
+  },
+  {
+    id: '2ucedvbhcdnj554c',
+    image: shoes_1,
     category: "Men's Fashion",
     subCategory: "Shoes",
     path: "man-shoes",
@@ -58,8 +127,8 @@ export const productsData = [
     department: 'Shoes'
   },
   {
-    id: 222,
-    image: shoes,
+    id: '2cndsbhc5d42s2',
+    image: shoes_2,
     category: "Men's Fashion",
     subCategory: "Shoes",
     path: "man-shoes",
@@ -73,11 +142,146 @@ export const productsData = [
     department: 'Sandals'
   },
   {
-    id: 22,
-    image: shoes,
+    id: '2chdygcbs84c2d2',
+    image: shoes_3,
     category: "Men's Fashion",
     subCategory: "Shoes",
     path: "man-shoes",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '21chdygcbs84c2d2',
+    image: shoes_4,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-shoes",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '22chdygcbs84c2d2',
+    image: shoes_5,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-shoes",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '23chdygcbs84c2d2',
+    image: shoes_6,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-shoes",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '24chdygcbs84c2d2',
+    image: shoes_7,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-shoes",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '1cugfycbsd8c5d5',
+    image: wallet_1,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-wallet",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '12cugfycbsd8c5d5',
+    image: wallet_2,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-wallet",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '13cugfycbsd8c5d5',
+    image: wallet_3,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-wallet",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '14cugfycbsd8c5d5',
+    image: wallet_4,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-wallet",
+    title: "Crocs Unisex Offroad Sport Clogs",
+    price: 20,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Reef",
+    rating: 4,
+    department: 'Sandals'
+  },
+  {
+    id: '15cugfycbsd8c5d5',
+    image: wallet_5,
+    category: "Men's Fashion",
+    subCategory: "Shoes",
+    path: "man-wallet",
     title: "Crocs Unisex Offroad Sport Clogs",
     price: 20,
     quantity: 10,
@@ -207,7 +411,113 @@ export const productsData = [
     brands: "Wood",
     rating: 5,
     department: 'Pocket Watches'
-  }
+  },
+  {
+    id: '11cneufbdjkc',
+    image: airpod_1,
+    category: "Electricity",
+    subCategory: "Accessories",
+    path: "electricity-accessories",
+    title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
+    price: 220,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Wood",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '11cneufbdjkc5c',
+    image: airpod_2,
+    category: "Electricity",
+    subCategory: "Accessories",
+    path: "electricity-accessories",
+    title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
+    price: 220,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Wood",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '12cneufbdjkc',
+    image: head_phone_1,
+    category: "Electricity",
+    subCategory: "Accessories",
+    path: "electricity-accessories",
+    title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
+    price: 220,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Wood",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '13cneufbdjkc',
+    image: head_phone_2,
+    category: "Electricity",
+    subCategory: "Accessories",
+    path: "electricity-accessories",
+    title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
+    price: 220,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Wood",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '14cneufbdjkc',
+    image: head_phone_3,
+    category: "Electricity",
+    subCategory: "Accessories",
+    path: "electricity-accessories",
+    title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
+    price: 220,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Wood",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '15cneufbdjkc',
+    image: head_phone_4,
+    category: "Electricity",
+    subCategory: "Accessories",
+    path: "electricity-accessories",
+    title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
+    price: 220,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Wood",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '16cneufbdjkc',
+    image: head_phone_5,
+    category: "Electricity",
+    subCategory: "Accessories",
+    path: "electricity-accessories",
+    title: "Yogasleep Rohm Portable White Noise Sound Machine, 3 Soothing Natural Sounds with Volume Control",
+    price: 220,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "Wood",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+
 
 
 ]

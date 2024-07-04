@@ -1,11 +1,13 @@
-import img from "../assets/images/1.png";
+import shart_1 from "@/assets/images/man-fashion/shart-1.png";
+import shoes_1 from "@/assets/images/man-fashion/shoes-1.png";
+import wallet_1 from "@/assets/images/man-fashion/wallet-1.png";
+
 import watch from "../assets/images/watch.png";
-import img4 from "../assets/images/4.png";
+import airpod_1 from "@/assets/images/accessories/airpod-1.png"
 import img5 from "../assets/images/5.png";
 import dextop from "../assets/images/dextop.png";
 import bath from "../assets/images/bath.png";
 import img10 from "../assets/images/10.png";
-import shoes from "../assets/images/shoes.png";
 import monitors from "../assets/images/monitors.png";
 import img20 from "../assets/images/20.png";
 import img21 from "../assets/images/21.png";
@@ -23,13 +25,19 @@ export const categoryListData = [
         id: 1,
         name: "Clothing",
         path:"man-clothing",
-        image: img,
+        image: shart_1,
       },
       {
         id: 2,
         name: "Shoes",
         path:"man-shoes",
-        image: shoes,
+        image: shoes_1,
+      },
+      {
+        id: 3,
+        name: "Wallet",
+        path:"man-wallet",
+        image: wallet_1,
       },
     ],
   },
@@ -77,7 +85,7 @@ export const categoryListData = [
         id: 7,
         name: "Accessories",
         path:"electricity-accessories",
-        image: img4,
+        image: airpod_1,
       },
     ],
   },

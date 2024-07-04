@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Home1 from "../../assets/images/home1.png";
 import Home2 from "../../assets/images/home2.webp";
-import Home3 from "../../assets/images/home3.png";
-import Home4 from "../../assets/images/home4.png";
+import Home3 from "../../assets/images/hero/laptop.jpg";
+import Home4 from "../../assets/images/hero/tablet.jpg";
 import Home5 from "../../assets/images/home5.jpg";
 import Home6 from "../../assets/images/home6.jpg";
 import { AiFillCalendar } from "react-icons/ai";
@@ -31,22 +31,14 @@ const Banner = () => {
       }
     }
   };
- 
+
   return (
     <section
       className="max-w-[1900px] mx-auto grid lg:grid-cols-[auto_50%_20%] md:grid-cols-[auto_70%] grid-cols-1 md:gap-x-5 gap-x-0 "
     >
       {/* --------- Left Side */}
-      <div
-        variants={cardVariants}
-        className="lg:row-span-2 hidden md:block lg:h-[700px] h-[600px] relative">
-        <Image
-          alt="image"
-          src={Home1}
-          width={400}
-          height={600}
-          className="w-full h-full object-cover"
-        />
+      <div className="lg:row-span-2 hidden md:block lg:h-[700px] h-[600px] relative">
+        <Image alt="image" src={Home1} width={400} height={600} className="w-full h-full object-cover" />
         <div className="absolute top-0 left-0 z-10 bg-black bg-opacity-30 text-slate-100 p-3 w-full h-full flex items-centr">
           <h3 className="lg:text-3xl text-xl font-semibold text-slate-100 rotate-90 font-norican absolute top-1/2 translate-y-1/1 right-0 ">
             Hooded
@@ -69,66 +61,10 @@ const Banner = () => {
           autoplay={{ delay: 5000 }}
           loop={true}
         >
-          <SwiperSlide>
-            <div className="relative h-[600px] w-full">
-              <Image
-                alt="image"
-                src={Home2}
-                width={600}
-                height={600}
-                className="w-full h-[600px]"
-              />
-              <div className="absolute top-0 left-0 z-10 bg-black bg-opacity-30 text-slate-100 p-3 w-full h-full flex items-end">
-                <div className="max-w-xs">
-                  <h3 className="lg:text-5xl text-xl font-semibold font-norican">Sofa Set</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-                    autem quis? Ullam cum aut temporibus?
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative h-[600px] w-full">
-              <Image
-                alt="image"
-                src={Home5}
-                width={600}
-                height={600}
-                className="w-full h-[600px]"
-              />
-              <div className="absolute top-0 left-0 z-10 bg-black bg-opacity-30 text-slate-100 p-3 w-full h-full flex items-end">
-                <div className="max-w-xs">
-                  <h3 className="lg:text-5xl text-xl font-semibold font-norican">Sofa Set</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-                    autem quis? Ullam cum aut temporibus?
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative h-[600px] w-full">
-              <Image
-                alt="image"
-                src={Home6}
-                width={600}
-                height={600}
-                className="w-full h-[600px]"
-              />
-              <div className="absolute top-0 left-0 z-10 bg-black bg-opacity-30 text-slate-100 p-3 w-full h-full flex items-end">
-                <div className="max-w-xs">
-                  <h3 className="lg:text-5xl text-xl font-semibold font-norican">Sofa Set</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-                    autem quis? Ullam cum aut temporibus?
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
+          <SwiperSlide> <BigCard /> </SwiperSlide>
+          <SwiperSlide> <BigCard /> </SwiperSlide>
+          <SwiperSlide> <BigCard /> </SwiperSlide>
+
           <div className="swiper-button-next">
             <BiRightArrow className="text-white " />
           </div>
@@ -138,38 +74,9 @@ const Banner = () => {
         </Swiper>
       </div>
       {/* -------- Right Side */}
-      <div
-        variants={cardVariants}
-        className="hidden lg:block"
-      >
-        <div className="relative h-[300px] w-full">
-          <Image
-            alt="image"
-            src={Home3}
-            width={300}
-            height={300}
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="max-w-sm absolute bottom-0  left-0 z-10 bg-black bg-opacity-30 w-full h-full p-3 flex items-end">
-            <h3 className="lg:text-3xl text-xl font-semibold text-slate-100 font-norican">
-              Hooded
-            </h3>
-          </div>
-        </div>
-        <div className="relative h-[300px] w-full">
-          <Image
-            alt="image"
-            src={Home4}
-            width={300}
-            height={300}
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="max-w-sm absolute bottom-0 left-0 z-10 bg-black bg-opacity-30 w-full h-full p-3 flex items-end">
-            <h3 className="lg:text-3xl text-xl font-semibold text-slate-100 font-norican">
-              T-Shart
-            </h3>
-          </div>
-        </div>
+      <div className="hidden lg:flex flex-col gap-[1px]">
+        <SmallCard src={Home3} title="Laptop" />
+        <SmallCard src={Home4} title="Tablet" />
       </div>
       {/* ------- our offer */}
       <div className="grid md:grid-cols-3 sm:grid-cols-2 col-span-2 px-3 lg:px-0  lg:gap-0 gap-5">
@@ -202,3 +109,32 @@ const Banner = () => {
 };
 
 export default Banner;
+
+
+const BigCard = ({ src, title, description }) => {
+  return (
+    <div className="relative h-[600px] w-full">
+      <Image alt="image" src={Home2} width={600} height={600} className="w-full h-[600px]" />
+      <div className="absolute top-0 left-0 z-10 bg-black bg-opacity-30 text-slate-100 p-3 w-full h-full flex items-end">
+        <div className="max-w-xs">
+          <h3 className="lg:text-5xl text-xl font-semibold font-norican">Sofa Set</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
+            autem quis? Ullam cum aut temporibus?
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const SmallCard = ({ src, title }) => {
+  return (
+    <div className="relative h-[300px] w-full">
+      <Image alt="image" src={src} width={300} height={300} className="w-full h-[300px] object-cover" />
+      <div className="max-w-sm absolute bottom-0  left-0 z-10 bg-black bg-opacity-30 w-full h-full p-3 flex items-end">
+        <h3 className="lg:text-3xl text-xl font-semibold text-slate-100 font-norican">{title}</h3>
+      </div>
+    </div>
+  )
+}

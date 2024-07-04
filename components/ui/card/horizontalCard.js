@@ -5,8 +5,9 @@ import {
   AiOutlineShoppingCart,
   AiOutlineEye,
 } from "react-icons/ai";
-import StarRating from "@/components/StarRating/StarRating";
+// import StarRating from "@/components/StarRating/starRating";
 import ModalWapper from "@/components/ModalWapper/ModalWapper";
+import StarRating from "../starRating";
 
 const HorizontalCard = ({ id, image, title, price, rating, color, sizes }) => {
   const [modalIsOpen, setIsOpen] = useState(false);

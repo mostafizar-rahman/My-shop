@@ -2,11 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-
 import { productsData } from '@/utlits/productsData'
 
 import AdsBanner from '@/components/AdsBanner/AdsBanner'
@@ -14,6 +9,7 @@ import Banner from '@/components/sections/banner';
 import ImportantProducts from '@/components/sections/importantProducts';
 import MainCard from '@/components/ui/card/mainCard';
 import HomeCategoryCard from '@/components/sections/homeCategoryCard';
+import PartnerLogo from '@/components/sections/partnerLogo';
 
 
 
@@ -100,102 +96,7 @@ const Home = ({ data }) => {
         </div>
       </div>
       {/* ------ Brands */}
-      <div className=' brands mx-auto max-w-7xl px-3 mt-28 mb-10'>
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={0}
-          slidesPerView={perView2}
-          autoplay={{ delay: 1000 }}
-          loop={true}
-        >
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/2.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/3.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/4.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/5.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div>
-              <Image alt='image' src={require("../assets/brands/6.png")} width={100} height={100} />
-            </div>
-          </SwiperSlide>
-
-        </Swiper>
-      </div>
+     <PartnerLogo/>
 
     </section>
   )

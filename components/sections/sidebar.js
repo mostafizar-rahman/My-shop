@@ -196,7 +196,7 @@ const Sidebar = ({ mainProductList, setProductList }) => {
         <div className=''>
             {/* ----- Deperment */}
             <div className='mt-0'>
-                <b className='text-black/90 '>{uniqueCategory}</b>
+                <b className='text-black/90 text-xl font-semibold'>{uniqueCategory}</b>
                 <ul className='flex flex-col'>
                     {
                         uniqueDepartment.map((department, id) => {
@@ -213,7 +213,7 @@ const Sidebar = ({ mainProductList, setProductList }) => {
             </div>
             {/* ----- Price */}
             {/* <div className='mt-3'>
-                <b className='text-black/90 '>Price</b>
+                <b className='text-black/90 text-xl font-semibold'>Price</b>
                 <div className='flex gap-1'>
                     <input onChange={handlePriceInput} type="number" name="min" id="" placeholder='Min' className='px-2 py-1 max-w-[80px]' />
                     <input onChange={handlePriceInput} type="number" name="max" id="" placeholder='Max' className='px-2 py-1 max-w-[80px]' />
@@ -224,7 +224,7 @@ const Sidebar = ({ mainProductList, setProductList }) => {
             </div> */}
             {/* ----- Brands */}
             <div className='mt-3'>
-                <b className='text-black/90 '>Brands</b>
+                <b className='text-black/90 text-xl font-semibold'>Brands</b>
                 <ul className='flex flex-col'>
                     {
                         uniqueBrands.map((brand, id) => {
@@ -242,7 +242,7 @@ const Sidebar = ({ mainProductList, setProductList }) => {
             </div>
             {/* ----- Rating */}
             <div className='mt-3'>
-                <b className='text-black/90 '>Rating</b>
+                <b className='text-black/90 text-xl font-semibold'>Rating</b>
                 <ul>
                     <li className='flex mb-1'>
                         <label className='inline-block' onClick={() => handleRating(5)} htmlFor={`rating5`}>
@@ -298,7 +298,7 @@ const Sidebar = ({ mainProductList, setProductList }) => {
             </div>
             {/* ---- Colors */}
             <div className='mt-3'>
-                <b className='text-black/90 '>Colors</b>
+                <b className='text-black/90 text-xl font-semibold'>Colors</b>
                 <ul className='flex flex-col'>
                     {
                         uniqueColors.map((color, id) => {

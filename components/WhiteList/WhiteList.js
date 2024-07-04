@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineDelete, AiOutlineEye, AiOutlineShoppingCart } from "react-icons/ai";
 import { productsData } from "@/utlits/productsData";
 import { addToCart } from "@/redux/features/addCart/cartSlice";
-import StarRating from "../StarRating/StarRating";
+// import StarRating from "../ui/starRating";
 import { removeToWhitList } from "@/redux/features/whiteList/whiteListSlice";
+import StarRating from "../ui/starRating";
 // import toast from 'react-hot-toast';
 
 const WhiteList = ({ whiteList, setWhiteList }) => {

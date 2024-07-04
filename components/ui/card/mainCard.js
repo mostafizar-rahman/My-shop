@@ -4,9 +4,10 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import toast from 'react-hot-toast';
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
-import StarRating from "@/components/StarRating/StarRating";
+// import StarRating from "@/components/StarRating/StarRating";
 import { addToWhiteList } from "@/redux/features/whiteList/whiteListSlice";
 import ModalWapper from "@/components/ModalWapper/ModalWapper";
+import StarRating from "../starRating";
 
 
 
