@@ -8,11 +8,12 @@ import { productsData } from '@/utlits/productsData'
 import Head from 'next/head'
 import AdsBanner from '@/components/AdsBanner/AdsBanner'
 import { useDispatch } from 'react-redux'
-import StarRating from '@/components/StarRating/StarRating'
+// import StarRating from '@/components/StarRating/StarRating'
 import { addToCart } from '@/redux/features/addCart/cartSlice'
 import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice'
 import { toast } from 'react-hot-toast'
 import MainCard from '@/components/ui/card/mainCard'
+import StarRating from '@/components/ui/starRating'
 
 const ProductDeteles = () => {
   const dispatch = useDispatch()
@@ -69,8 +70,8 @@ const ProductDeteles = () => {
         <div className="flex md:flex-row flex-col items-center md:items-start md:space-x-10">
           <div className="basis-[45%] w-full bg-white flex lg:flex-row flex-col px-2 py-3 mb-5">
             <div className='flex lg:flex-col flex-row order-2 lg:order-1 mx-auto'>
-              <Image onClick={handleImages} src={require("../../assets/images/2.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
-              <Image onClick={handleImages} src={require("../../assets/images/2.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
+              <Image onClick={handleImages} src={require("../../assets/images/man-fashion/shart-2.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
+              <Image onClick={handleImages} src={require("../../assets/images//man-fashion/shart-1.png")} alt="img" width={96} height={96} className="w-24 h-24 object-contain rounded-md border mr-5 mb-5 p-2 cursor-pointer" />
             </div>
             {product?.image &&
               <Image src={currentImage || product?.image} alt="img" height={400} width={400} className="sm:h-[400px] h-[300px] sm:w-[400px] w-[300px] rounded-md border object-contain order-1 lg:order-2 mb-3 lg:mb-0 mx-auto" />
@@ -321,7 +322,7 @@ const ProductDeteles = () => {
                   <div>
                     <div className='inline-block'>
                       <Link href={""} className='flex items-center gap-3 w-full '>
-                        <Image src={require("../../assets/images/2.png")} width={50} height={50} className='rounded-full w-10 object-contain h-10 border' />
+                        <Image src={require("../../assets/images/man-fashion/shart-2.png")} width={50} height={50} className='rounded-full w-10 object-contain h-10 border' />
                         <p className='text-sm'>Ladna</p>
                       </Link>
                     </div>

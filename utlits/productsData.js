@@ -1,6 +1,4 @@
 
-import monitors from "../assets/images/monitors.png";
-import img20 from "../assets/images/20.png";
 import img21 from "../assets/images/21.png";
 import img22 from "../assets/images/22.png";
 import img23 from "../assets/images/23.png";
@@ -26,13 +24,31 @@ import wallet_4 from "../assets/images/man-fashion/wallet-4.png";
 import wallet_5 from "../assets/images/man-fashion/wallet-5.png";
 
 
-import airpod_1 from "@/assets/images/accessories/airpod-1.png"
-import airpod_2 from "@/assets/images/accessories/airpod-2.png"
-import head_phone_1 from "@/assets/images/accessories/head-phone-1.png"
-import head_phone_2 from "@/assets/images/accessories/head-phone-2.png"
-import head_phone_3 from "@/assets/images/accessories/head-phone-3.png"
-import head_phone_4 from "@/assets/images/accessories/head-phone-4.png"
-import head_phone_5 from "@/assets/images/accessories/head-phone-5.png"
+import airpod_1 from "@/assets/images/electricity/airpod-1.png"
+import airpod_2 from "@/assets/images/electricity/airpod-2.png"
+import head_phone_1 from "@/assets/images/electricity/head-phone-1.png"
+import head_phone_2 from "@/assets/images/electricity/head-phone-2.png"
+import head_phone_3 from "@/assets/images/electricity/head-phone-3.png"
+import head_phone_4 from "@/assets/images/electricity/head-phone-4.png"
+import head_phone_5 from "@/assets/images/electricity/head-phone-5.png"
+
+import desktop_1 from "@/assets/images/electricity/desktop-1.png"
+import desktop_2 from "@/assets/images/electricity/desktop-2.png"
+import desktop_3 from "@/assets/images/electricity/desktop-3.png"
+import desktop_4 from "@/assets/images/electricity/desktop-4.png"
+
+import laptop_1 from "@/assets/images/electricity/laptop-1.png"
+import laptop_2 from "@/assets/images/electricity/laptop-2.png"
+import laptop_3 from "@/assets/images/electricity/laptop-3.png"
+import laptop_4 from "@/assets/images/electricity/laptop-4.png"
+import laptop_5 from "@/assets/images/electricity/laptop-5.png"
+
+import monitor_1 from "@/assets/images/electricity/monitor-1.png"
+import monitor_2 from "@/assets/images/electricity/monitor-2.png"
+import monitor_3 from "@/assets/images/electricity/monitor-3.png"
+import monitor_4 from "@/assets/images/electricity/monitor-4.png"
+
+
 
 export const productsData = [
 
@@ -322,8 +338,8 @@ export const productsData = [
     department: 'Pocket Watches'
   },
   {
-    id: 6,
-    image: monitors,
+    id: '6ycgevsdc4dchb',
+    image: desktop_1,
     category: "Electricity",
     subCategory: "Computer",
     path: "electricity-computer",
@@ -337,23 +353,158 @@ export const productsData = [
     department: 'Pocket Watches'
   },
   {
-    id: 7,
-    image: img20,
+    id: '61ycgevsdc4dchb',
+    image: desktop_2,
     category: "Electricity",
-    subCategory: "Laptop",
-    path: "electricity-laptop",
-    title: `ASUS Vivobook Laptop L210 11.6" Ultra Thin Laptop, Intel Celeron N4020 Processor, 4GB RAM, 128GB eMMC Storage, Windows 11 Home in S Mode with One Year of Office 365 Personal, L210MA-DS04,Star Black`,
-    price: 90,
+    subCategory: "Computer",
+    path: "electricity-computer",
+    title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
+    price: 40,
     quantity: 10,
     color: ["Black", "white", "gary"],
     sizes: ['M', "l", "XL", "XXL"],
-    brands: "ASUS",
+    brands: "HP",
+    rating: 4,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '63ycgevsdc4dchb',
+    image: desktop_3,
+    category: "Electricity",
+    subCategory: "Computer",
+    path: "electricity-computer",
+    title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
+    price: 40,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "HP",
+    rating: 4,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '64ycgevsdc4dchb',
+    image: desktop_4,
+    category: "Electricity",
+    subCategory: "Computer",
+    path: "electricity-computer",
+    title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
+    price: 40,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "HP",
+    rating: 4,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '7cndycbhkdc4c85dsc',
+    image: laptop_1,
+    category: "Electricity",
+    subCategory: "Laptop",
+    path: "electricity-laptop",
+    title: `dell Laptop L210 11.6" Ultra Thin Laptop, Intel Celeron N4020 Processor, 4GB RAM, 128GB eMMC Storage, Windows 11 Home in S Mode with One Year of Office 365 Personal, L210MA-DS04,Star Black`,
+    price: 150,
+    quantity: 10,
+    color: ["black", "selver"],
+    sizes: ['14', '15.5', '12'],
+    ram: ['8gb', '16gb'],
+    brands: "dell",
+    rating: 5,
+  },
+  {
+    id: '72cndycbhkdc4c85dsc',
+    image: laptop_2,
+    category: "Electricity",
+    subCategory: "Laptop",
+    path: "electricity-laptop",
+    title: `dell Laptop L210 11.6" Ultra Thin Laptop, Intel Celeron N4020 Processor, 4GB RAM, 128GB eMMC Storage, Windows 11 Home in S Mode with One Year of Office 365 Personal, L210MA-DS04,Star Black`,
+    price: 90,
+    quantity: 10,
+    color: ["black", "selver"],
+    sizes: ['14', '15.5'],
+    ram: ['8gb', '16gb', '32gb'],
+    brands: "dell",
+    rating: 4.5,
+  },
+  {
+    id: '73cndycbhkdc4c85dsc',
+    image: laptop_3,
+    category: "Electricity",
+    subCategory: "Laptop",
+    path: "electricity-laptop",
+    title: `asus Vivobook Laptop L210 11.6" Ultra Thin Laptop, Intel Celeron N4020 Processor, 4GB RAM, 128GB eMMC Storage, Windows 11 Home in S Mode with One Year of Office 365 Personal, L210MA-DS04,Star Black`,
+    price: 120,
+    quantity: 10,
+    color: ["black"],
+    sizes: ['15.5', '12'],
+    ram: ['16gb', '32gb'],
+    brands: "asus",
+    rating: 5,
+  },
+  {
+    id: '74cndycbhkdc4c85dsc',
+    image: laptop_4,
+    category: "Electricity",
+    subCategory: "Laptop",
+    path: "electricity-laptop",
+    title: `lenovo Laptop L210 11.6" Ultra Thin Laptop, Intel Celeron N4020 Processor, 4GB RAM, 128GB eMMC Storage, Windows 11 Home in S Mode with One Year of Office 365 Personal, L210MA-DS04,Star Black`,
+    price: 200,
+    quantity: 10,
+    color: ["selver"],
+    sizes: ['14', '12'],
+    ram: ['8gb', '16gb',],
+    brands: "lenovo",
+    rating: 4,
+  },
+  {
+    id: '75cndycbhkdc4c85dsc',
+    image: laptop_5,
+    category: "Electricity",
+    subCategory: "Laptop",
+    path: "electricity-laptop",
+    title: `hp Laptop L210 11.6" Ultra Thin Laptop, Intel Celeron N4020 Processor, 4GB RAM, 128GB eMMC Storage, Windows 11 Home in S Mode with One Year of Office 365 Personal, L210MA-DS04,Star Black`,
+    price: 190,
+    quantity: 10,
+    color: ["red"],
+    sizes: ['14', '15.5'],
+    ram: ['8gb', '16gb', '32gb'],
+    brands: "hp",
+    rating: 3,
+  },
+  {
+    id: '8ic7fdsyvcbc48d51c',
+    image: monitor_1,
+    category: "Electricity",
+    subCategory: "Monitors",
+    path: "electricity-monitors",
+    title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
+    price: 160,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "samsung",
     rating: 5,
     department: 'Pocket Watches'
   },
   {
-    id: 8,
-    image: img21,
+    id: '82ic7fdsyvcbc48d51c',
+    image: monitor_2,
+    category: "Electricity",
+    subCategory: "Monitors",
+    path: "electricity-monitors",
+    title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
+    price: 260,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "dell",
+    rating: 5,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '83ic7fdsyvcbc48d51c',
+    image: monitor_3,
     category: "Electricity",
     subCategory: "Monitors",
     path: "electricity-monitors",
@@ -362,8 +513,23 @@ export const productsData = [
     quantity: 10,
     color: ["Black", "white", "gary"],
     sizes: ['M', "l", "XL", "XXL"],
-    brands: "Samsung",
-    rating: 5,
+    brands: "hp",
+    rating: 3,
+    department: 'Pocket Watches'
+  },
+  {
+    id: '84ic7fdsyvcbc48d51c',
+    image: monitor_4,
+    category: "Electricity",
+    subCategory: "Monitors",
+    path: "electricity-monitors",
+    title: `Sceptre Curved 27" FHD 1080p 75Hz LED Monitor HDMI VGA Build-In Speakers, EDGE-LESS Metal Black 2019 (C275W-1920RN)`,
+    price: 100,
+    quantity: 10,
+    color: ["Black", "white", "gary"],
+    sizes: ['M', "l", "XL", "XXL"],
+    brands: "lg",
+    rating: 4,
     department: 'Pocket Watches'
   },
 

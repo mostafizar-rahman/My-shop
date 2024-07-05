@@ -21,13 +21,13 @@ const CategoryList = () => {
                                     <AiOutlinePlus className='block md:hidden text-white cursor-pointer' />
                                     <MdOutlineKeyboardArrowRight className='md:block hidden text-white transition-all duration-500 md:group-hover/firstDropdown:text-black' />
                                 </p>
-                                <ul className={`${isDropdownOpen === id ? "max-h-[400px] visible md:invisible opacity-100" : "invisible max-h-0  md:max-h-full"} opacity-0 md:group-hover/firstDropdown:visible md:group-hover/firstDropdown:opacity-100 md:group-hover/firstDropdown:translate-x-0 translate-x-5 transition-all duration-500 ease-in-out static md:absolute md:left-full md:top-0 top-full left-0 text-white min-w-[150px]`}>
+                                <ul className={`${isDropdownOpen === id ? "max-h-[400px] visible md:invisible opacity-100" : "invisible max-h-0  md:max-h-full"} opacity-0 md:group-hover/firstDropdown:visible md:group-hover/firstDropdown:opacity-100 md:group-hover/firstDropdown:translate-x-0 translate-x-5 transition-all duration-500 ease-in-out static md:absolute md:left-full md:top-0 top-full left-0 text-white min-w-[250px]`}>
 
                                     {
                                         subCategory.map(({ id, name, path }) => {
                                             return (
                                                 <li key={id} className='px-3  hover:bg-white hover:text-black bg-[#101f32]'>
-                                                    <Link href={`/category-product/${path}`} className='w-full block py-2'>{name}</Link>
+                                                    <Link href={`/category-product/${path}`} className='w-auto block py-2'>{name}</Link>
                                                 </li>
                                             )
                                         })
