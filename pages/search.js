@@ -5,10 +5,10 @@ import { useRouter } from 'next/router';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 
-import StarRating from '@/components/StarRating/StarRating';
 import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice';
 import { productsData } from '@/utlits/productsData';
 import ModalWapper from '@/components/ModalWapper/ModalWapper';
+import StarRating from '@/components/ui/starRating';
 
 const Search = () => {
   const router = useRouter();

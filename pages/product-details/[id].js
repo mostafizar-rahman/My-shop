@@ -6,7 +6,6 @@ import Link from 'next/link'
 
 import { productsData } from '@/utlits/productsData'
 import Head from 'next/head'
-import AdsBanner from '@/components/AdsBanner/AdsBanner'
 import { useDispatch } from 'react-redux'
 // import StarRating from '@/components/StarRating/StarRating'
 import { addToCart } from '@/redux/features/addCart/cartSlice'
@@ -14,6 +13,7 @@ import { addToWhiteList } from '@/redux/features/whiteList/whiteListSlice'
 import { toast } from 'react-hot-toast'
 import MainCard from '@/components/ui/card/mainCard'
 import StarRating from '@/components/ui/starRating'
+import AdsBanner from '@/components/sections/adsBanner'
 
 const ProductDeteles = () => {
   const dispatch = useDispatch()
